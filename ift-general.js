@@ -10,6 +10,16 @@ function handleSearch() {
     $('#NAV .navbar-nav').after('<button type="button" class="search-btn-top"></button>');
 }
 
+function topOfPage() {
+	$('body,html').animate({scrollTop: 0}, 500);
+}
+
+function scrollToLocation(val) {
+	var headerHeight = !!($('#MPOuterHeader').hasClass('stickyNav')) ? $('#MPOuterHeader').height() : 0;
+	var location = $(val).offset().top - headerHeight; 
+	$('body,html').animate({scrollTop: location}, 500);
+}
+
 $(function () {
     handleAnnouncementBar();
     handleSearch();

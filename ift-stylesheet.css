@@ -296,6 +296,7 @@ button:focus {
 .card {
     padding: 30px;
     background: #F7F7F7;
+    margin-bottom: 35px;
 }
 .card.blue {
     background: #4367A8;
@@ -507,6 +508,7 @@ button:focus {
 #MPOuterFooter {
     background: #EDEDEF;
     position: relative;
+    margin-top: 125px;
 }
 #MPOuterFooter::before {
     content: '';
@@ -518,8 +520,92 @@ button:focus {
     width: calc(50% - 600px);
     display: block;
 }
+#FOOTER {
+    padding: 50px 35px;
+}
+
+/*** left column ***/
+
+#FOOTER .card {
+    width: 500px;
+    max-width: 100%;
+    margin-top: -130px;
+}
+#FOOTER > .row > .col-md-6:last-child {
+    text-align: right;
+}
+.footer-logo {
+    margin-bottom: 20px;
+}
+.footer-contact {
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.33;
+    color: #262D3C;
+}
+.footer-contact a {
+    text-decoration: none;
+}
+
+/*** social links ***/
+.footer-social ul {
+    display: flex;
+    padding-left: 0;
+    justify-content: flex-end;
+    margin-bottom: 65px;
+}
+.footer-social ul li {
+    list-style-type: none;
+    margin-left: 25px;
+}
+.footer-social ul li a {
+    font-size: 30px;
+    line-height: 1;
+}
+
+/*** quick links ***/
+.footer-links ul {
+    padding: 0;
+}
+.footer-links ul li {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+.footer-links ul li:last-child {
+    margin-bottom: 0;
+}
+.footer-links ul li a {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 1.375;
+    color: #262D3C;
+    text-decoration: none;
+}
+.footer-contact a:hover,
+.footer-contact a:focus,
+.footer-links ul li a:hover,
+.footer-links ul li a:focus {
+    color: #5987C6;
+    text-decoration: underline;
+}
+
+/*** copyright and attribution ***/
+.footer-bottom {
+    margin-top: 35px;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #262D3C;
+}
 
 /************ responsiveness ************/
+
+/****** general ******/
+@media (max-width: 992px) {
+    .row-wide div[class*='section'] {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
 
 /****** header ******/
 
@@ -578,5 +664,30 @@ button:focus {
 @media (max-width: 450px) {
     #Logo {
         max-width: calc(100% - 60px);
+    }
+}
+
+/****** footer ******/
+@media (max-width: 1500px) {
+    #MPOuterFooter::after {
+        width: 300px;
+    }
+}
+@media (max-width: 991px) {
+    #MPOuterFooter::after {
+        display: none;
+    }
+    .footer-social,
+    .footer-links {
+        display: none;
+    }
+    .footer-attribution {
+        text-align: left;
+    }
+}
+@media (max-width: 475px) {
+    #FOOTER {
+        padding-left: 0px;
+        padding-right: 0px;
     }
 }
