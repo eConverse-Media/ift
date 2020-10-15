@@ -6,6 +6,11 @@ function closeAnnouncement() {
     $('.announcement-bar').hide();
 }
 
+function handleSearch() {
+    $('#NAV .navbar-nav').after('<button type="button" class="search-btn-top"></button>');
+}
+
 $(function () {
     handleAnnouncementBar();
+    handleSearch();
 });

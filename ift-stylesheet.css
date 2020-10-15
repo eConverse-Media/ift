@@ -149,6 +149,172 @@ button:focus {
     transition: .3s;
 }
 
+/****** buttons ******/
+
+.make-buttons em a {
+    display: inline-block;
+    font-style: normal;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 1.375;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 0;
+    border: 2px solid #4367a8;
+    background: #4367A8;
+}
+.yellow-buttons em a {
+    background: #FFD106;
+    border-color: #FFD106;
+    color: #262D3C;
+}
+.make-buttons.white-buttons em a,
+.card.blue.make-buttons em a {
+    background: #fff;
+    border-color: #fff;
+    color: #4367A8;
+}
+.make-buttons.hollow-buttons em a {
+    background: transparent;
+    border-color: #fff;
+    color: #fff;
+}
+.card.yellow.make-buttons em a {
+    background: #fff;
+    border-color: #fff;
+    color: #262D3C;
+}
+
+.make-buttons.hollow-buttons em a:hover,
+.make-buttons.hollow-buttons em a:focus {
+    opacity: 0.7;
+}
+.make-buttons em a:hover,
+.make-buttons em a:focus {
+    background: #5987C6;
+    border-color: #5987C6;
+    color: #fff;
+}
+.make-buttons.white-buttons em a:hover,
+.make-buttons.white-buttons em a:focus,
+.card.blue.make-buttons em a:hover,
+.card.blue.make-buttons em a:focus,
+.card.yellow.make-buttons em a:hover,
+.card.yellow.make-buttons em a:focus {
+    background: #4367A8;
+    border-color: #4367A8;
+    color: #fff;
+}
+
+/*** default HL buttons ***/
+
+.btn:not(.dropdown-toggle) {
+	white-space: normal;
+}
+.btn:not(.btn-secondary),
+.blue-card .btn.btn-secondary {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.275;
+    padding: 10px 22px;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 0;
+}
+.btn.btn-sm,
+.btn-group-sm>.btn {
+    padding: 5px 10px;
+    border-radius: 0;
+}
+.btn.btn-xs {
+    padding: 2px 5px;
+    border-radius: 0;
+}
+/****** CHANGE COLOURS ON THESE ******/
+.btn-default {
+    background: #fff;
+    color: #4367A8;
+    border-color: #4367A8;
+}
+.btn-default:hover,
+.btn-default:focus {
+    background: #4367A8;
+    color: #fff;
+    border-color: #4367A8;
+}
+.btn-success,
+.btn-info,
+.HL-contact-suggestions .btn-primary,
+.btn-info.disabled, .btn-info[disabled], fieldset[disabled] .btn-info, .btn-info.disabled:hover, .btn-info[disabled]:hover, fieldset[disabled] .btn-info:hover, .btn-info.disabled:focus, .btn-info[disabled]:focus, fieldset[disabled] .btn-info:focus, .btn-info.disabled:active, .btn-info[disabled]:active, fieldset[disabled] .btn-info:active, .btn-info.disabled.active, .btn-info[disabled].active, fieldset[disabled] .btn-info.active,
+.btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success[disabled].active, fieldset[disabled] .btn-success.active {
+    color: #262D3C;
+    background: #FFD106;
+    border-color: #FFD106;
+}
+.btn-success:hover,
+.btn-success:active,
+.btn-info:hover,
+.btn-info:active,
+.HL-contact-suggestions .btn-primary:hover,
+.HL-contact-suggestions .btn-primary:active,
+.btn-success:focus,
+ .btn-success.active, 
+ .open .dropdown-toggle.btn-success {
+    color: #fff;
+    background: #5987C6;
+    border-color: #5987C6;
+}
+.btn-primary,
+.ideation-home .btn-success,
+.community-radio .btn-group .btn-primary.dropdown-toggle,
+.open .dropdown-toggle.btn-primary,
+.btn-primary.disabled, .btn-primary[disabled], fieldset[disabled] .btn-primary, .btn-primary.disabled:hover, .btn-primary[disabled]:hover, fieldset[disabled] .btn-primary:hover, .btn-primary.disabled:focus, .btn-primary[disabled]:focus, fieldset[disabled] .btn-primary:focus, .btn-primary.disabled:active, .btn-primary[disabled]:active, fieldset[disabled] .btn-primary:active, .btn-primary.disabled.active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary.active,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary, 
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
+    color: #fff;
+    background: #4367A8;
+    border-color: #4367A8;
+}
+.btn-primary:hover,
+.btn-primary:focus,
+.ideation-home .btn-success:hover,
+.ideation-home .btn-success:focus,
+.community-radio .btn-group .btn-primary.dropdown-toggle:hover,
+.community-radio .btn-group .btn-primary.dropdown-toggle:focus,
+.open .dropdown-toggle.btn-primary:hover,
+.open .dropdown-toggle.btn-primary:focus,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary:hover,
+.bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary:focus, 
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary:hover,
+.bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary:focus {
+    background: #5987C6;
+    border-color: #5987C6;
+}
+
+/****** cards ******/
+
+.card {
+    padding: 30px;
+    background: #F7F7F7;
+}
+.card.blue {
+    background: #4367A8;
+}
+.card.yellow {
+    background: #FFD106;
+}
+.card h2 {
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+.card p:last-of-type {
+    margin-bottom: 20px;
+}
+.card.blue h2,
+.card.blue p {
+    color: #fff;
+}
+
 /************ header ************/
 
 #MPOuterMost.full #HEADER {
@@ -159,8 +325,11 @@ button:focus {
     padding-left: 0;
     padding-right: 0;
 }
+#MPheader {
+    padding: 20px 70px;
+}
 
-/****** alert bar ******/
+/****** announcement bar ******/
 .announcement-bar {
     text-align: center;
     background: #FFD106;
@@ -182,7 +351,61 @@ button:focus {
     line-height: 1;
 }
 
-/****** top text links and login link ******/
+/****** top menu ******/
+
+.top-menu ul {
+    display: flex;
+    background: #4E4B4C;
+    padding: 10px 70px;
+    justify-content: flex-end;
+}
+.top-menu ul li {
+    list-style-type: none;
+    margin-left: 35px;
+}
+.top-menu ul li a {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #F7F7F7;
+    text-decoration: none;
+}
+.top-menu ul li a:hover,
+.top-menu ul li a:focus {
+    color: #bfbfbf;
+}
+
+/****** logo and top text links ******/
+
+#MPheader > div.row {
+    padding: 0;
+}
+#MPheader::before,
+#MPheader::after {
+    content: ' ';
+    display: table;
+}
+#MPheader::after {
+    clear: both;
+}
+
+#Logo {
+    float: left;
+}
+#MPheader > .row:first-child {
+    float: right;
+}
+.skiplinkholder a, .skiplinkholder a:link, .skiplinkholder a:visited {
+    left: -500%;
+    top: -250px;
+    min-width: 300px;
+}
+.skiplinkholder a:focus, .skiplinkholder a:active {
+    left: 0;
+	top: 0;
+}
+
+/*** top text links and login link ***/
 
 #MPAuxNav ul.level1 li a {
     font-weight: 700;
@@ -218,4 +441,142 @@ button:focus {
 #Welcome_LoginLink:focus {
     color: #5987C6;
     text-decoration: underline;
+}
+
+/****** search ******/
+
+.search-btn-top {
+    padding: 0;
+    background: transparent;
+    border: none;
+    margin-top: -5px;
+}
+.search-btn-top::before {
+    font-family: IFT;
+    content: '\f001';
+    color: #4367A8;
+    font-size: 24px;
+}
+#searchColumn {
+    max-width: 100%;
+    float: none !important;
+}
+
+/****** main nav ******/
+
+#NAV {
+    position: absolute;
+    right: 80px;
+    bottom: 0;
+}
+#NAV,
+.navbar-default {
+    background-color: transparent;
+    border: none;
+}
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.disabled>a {
+    color: #262D3C; 
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.33;
+    padding: 5px 2px;
+    margin: 0 25px 15px 25px;
+    border-bottom: 4px solid transparent;
+}
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.disabled>a:hover, .navbar-default .navbar-nav>.disabled>a:focus,
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    color: #262D3C; 
+    background-color: transparent;
+    border-bottom-color: #FFD106;
+}
+.navbar-default .navbar-nav>.dropdown>a .caret {
+    display: none;
+}
+
+/************ footer ************/
+
+#MPFooterLink,
+#MPCopyright {
+    display: none;
+}
+#MPOuterFooter {
+    background: #EDEDEF;
+    position: relative;
+}
+#MPOuterFooter::before {
+    content: '';
+    background: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: calc(50% - 600px);
+    display: block;
+}
+
+/************ responsiveness ************/
+
+/****** header ******/
+
+/*** larger screens only ***/
+@media (min-width: 768px) {
+    #NAV .row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    #NAV .col-md-12,
+    .navbar-collapse {
+        padding: 0;
+    }
+    #searchColumn {
+        display: none;
+    }
+}
+
+/*** smaller screens only ***/
+
+@media (max-width: 1200px) {
+    #MPheader > div.row > .col-md-12 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+@media (max-width: 991px) {
+    .top-menu ul,
+    #MPheader {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    #NAV {
+        right: 15px;
+    }
+}
+@media (max-width: 767px) {
+    #Logo {
+        position: relative;
+        z-index: 20;
+    }
+    #NAV {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        z-index: 10;
+        margin-top: -65px;
+    }
+    .search-btn-top {
+        display: none;
+    }
+    .announcement-bar {
+        padding: 15px;
+    }
+}
+@media (max-width: 450px) {
+    #Logo {
+        max-width: calc(100% - 60px);
+    }
 }
