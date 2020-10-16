@@ -20,7 +20,25 @@ function scrollToLocation(val) {
 	$('body,html').animate({scrollTop: location}, 500);
 }
 
+function handleHangingCards() {
+    $('.hanging-card').each(function () {
+        var self = $(this),
+            link = $(self).find('a'),
+            href = $(link).attr('href'),
+            target = $(link).attr('target');
+
+        if (target == "_blank") {
+            $(self).wrapInner('<a href="' + href + '" target="_blank" />');
+        } else {
+            $(self).wrapInner('<a href="' + href + '" />');
+        }
+
+        $(link).hide();
+    });
+}
+
 $(function () {
     handleAnnouncementBar();
     handleSearch();
+    handleHangingCards();
 });
