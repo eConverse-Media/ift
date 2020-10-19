@@ -74,11 +74,11 @@ body {
 }
 
 /****** margins between sections ******/
-.margin-top-85 > div[class*="col-md-"][class*="section"] {
+.margin-top-85 > div[class*="col-md-"][class*="section"]:not(:empty) {
     margin-top: 85px;
 }
 @media (max-width: 650px) {
-    .margin-top-85 > div[class*="col-md-"][class*="section"] {
+    .margin-top-85 > div[class*="col-md-"][class*="section"]:not(:empty) {
         margin-top: 45px;
     }
 }
@@ -196,6 +196,13 @@ button:focus {
 
 /****** buttons ******/
 
+.make-buttons em {
+    margin: -10px;
+    display: inline-block;
+}
+.make-buttons em a {
+    margin: 10px;
+}
 .make-buttons em a {
     display: inline-block;
     font-style: normal;
@@ -224,6 +231,11 @@ button:focus {
     border-color: #fff;
     color: #fff;
 }
+.make-buttons.dark-hollow-buttons-first em a:first-child {
+    color: #4367A8;
+    border-color: #4367A8;
+    background: transparent;
+}
 .card.yellow.make-buttons em a {
     background: #fff;
     border-color: #fff;
@@ -236,6 +248,12 @@ button:focus {
     background: transparent;
     border-color: #fff;
     color: #fff;
+}
+.make-buttons.dark-hollow-buttons-first em a:first-child:hover,
+.make-buttons.dark-hollow-buttons-first em a:first-child:focus {
+    color: #fff;
+    background: #4367A8;
+    border-color: #4367A8;
 }
 .make-buttons em a:hover,
 .make-buttons em a:focus {
@@ -758,6 +776,40 @@ a.label.label-search-tag {
 
 /************ public homepage ************/
 
+/****** hero ******/
+.public-hero {
+    padding: 200px 200px 0 200px;
+    border-bottom: 45px solid #FFD106;
+    margin-bottom: 70px;
+}
+.public-hero .HtmlContent {
+    margin-bottom: -90px;
+    background: #F7F7F7;
+    padding: 30px 40px;
+    position: relative;
+    max-width: 630px;
+    width: calc(100% - 45px);
+}
+.public-hero .HtmlContent::after {
+    content: '';
+    position: absolute;
+    top: 40px;
+    bottom: 90px;
+    right: -45px;
+    border-right: 45px solid #FFD106;
+}
+.public-hero h1 {
+    margin-top: 0;
+    color: #262D3C;
+    margin-bottom: 20px;
+}
+.public-hero p {
+    color: #575451;
+}
+.public-hero p:last-of-type {
+    margin-bottom: 35px;
+}
+
 /****** landing control sliders ******/
 
 /*** text ***/
@@ -880,6 +932,31 @@ a.label.label-search-tag {
 }
 .network-with-peers a {
     text-decoration: none;
+}
+
+/****** promo space ******/
+
+.card.promo-section.row-wide {
+    padding: 60px 35px 0 60px;
+    max-width: 1243px;
+}
+.card.promo-section > div[class*="col-md-"] {
+    padding-left: 0;
+    padding-right: 0;
+}
+.promo-text h2 {
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+.promo-text p {
+    color: #262D3C;
+}
+.promo-text p:last-of-type {
+    margin-bottom: 35px;
+}
+
+.promo-img {
+    margin-bottom: -50px;
 }
 
 /************ most popular stories ************/
@@ -1098,6 +1175,12 @@ a.label.label-search-tag {
     }
 }
 
+@media (max-width: 600px) {
+    h1, .h1 {
+        font-size: 32px;
+    }
+}
+
 /****** header ******/
 
 /*** larger screens only ***/
@@ -1196,7 +1279,39 @@ a.label.label-search-tag {
     }
 }
 
+/*** most popular stories ***/
+@media (max-width: 991px) {
+    .popular-stories .col-md-6:first-child {
+        padding-right: 15px;
+        padding-bottom: 50px;
+    }
+}
+
 /****** public homepage ******/
+
+/*** public hero ***/
+
+@media (max-width: 991px) {
+    .public-hero {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+@media (max-width: 768px) {
+    .public-hero {
+        padding-top: 100px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+@media (max-width: 650px) {
+    .public-hero {
+        padding: 50px 25px 0 25px;
+    }
+    .public-hero .HtmlContent {
+        padding: 20px;
+    }
+}
 
 /*** hanging cards ***/
 @media (max-width: 991px) {
@@ -1244,6 +1359,7 @@ a.label.label-search-tag {
     }
 }
 
+
 /*** network with peers ***/
 @media (max-width: 991px) {
     .network-with-peers {
@@ -1251,10 +1367,20 @@ a.label.label-search-tag {
     }
 }
 
-/*** most popular stories ***/
+/*** promo space ***/
 @media (max-width: 991px) {
-    .popular-stories .col-md-6:first-child {
-        padding-right: 15px;
-        padding-bottom: 50px;
+    .card.promo-section {
+        padding: 60px 60px 0 60px;
+    }
+    .promo-text {
+        margin-bottom: 50px;
+    }
+    .promo-text h2 {
+        margin-top: 0;
+    }
+}
+@media (max-width: 650px) {
+    .card.promo-section {
+        padding: 25px 25px 0 25px;
     }
 }
