@@ -897,8 +897,71 @@ a.label.label-search-tag {
 
 /****** top contributors ******/
 
+.HLEngagement.HLLandingControl .Content p.bg-warning {
+    margin-bottom: 0;
+}
 .top-contributors {
     padding: 30px;
+}
+.top-contributors.small-h2 h2 {
+    margin-bottom: 20px;
+}
+.top-contributors .HLLandingControl ul li {
+    border: none;
+    padding: 20px 0 20px 70px;
+    margin: 0;
+    position: relative;
+}
+.top-contributors .HLLandingControl ul li:last-child {
+    padding-bottom: 10px;
+}
+.top-contributors .HLLandingControl .title-row .Picture {
+    padding: 0;
+    position: absolute;
+    top: 20px;
+    left: 0;
+}
+.top-contributors .HLLandingControl .col-md-9 {
+    width: 100%;
+    padding: 0;
+}
+.top-contributors .HLLandingControl .Picture + .col-md-9 > a {
+    text-decoration: none;
+    font-size: 18px;
+}
+.top-contributors .points-label {
+    padding: 0;
+    background: transparent;
+    color: #4B4B4B;
+    font-size: 12px;
+    line-height: 1.33;
+    font-weight: 400;
+}
+.top-contributors ul li .points-label::before {
+    margin-right: 10px;
+    border: 1px solid #4367A8;
+    border-radius: 100px;
+    padding: 2px 6px;
+    color: #4367A8;
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 1;
+    text-transform: uppercase;
+}
+.top-contributors ul li:first-child .points-label::before {
+    content: '1st';
+}
+.top-contributors ul li:nth-child(2) .points-label::before {
+    content: '2nd';
+}
+.top-contributors ul li:nth-child(3) .points-label::before {
+    content: '3rd';
+}
+.top-contributors ul li:nth-child(4) .points-label::before {
+    content: '4th';
+}
+.top-contributors ul li:nth-child(5) .points-label::before {
+    content: '5th';
 }
 
 /************ public homepage ************/
