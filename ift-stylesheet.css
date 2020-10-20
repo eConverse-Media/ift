@@ -83,6 +83,14 @@ body {
     }
 }
 
+/****** borders between sections ******/
+.row-break .HtmlContent {
+    width: 100%;
+    border-bottom: 1px solid #BDBDBD;
+    margin-top: 45px;
+    margin-bottom: 20px;
+}
+
 /****** minimum widths ******/
 .home div[class*="col-md-"] {
     min-height: 0;
@@ -360,6 +368,18 @@ button:focus {
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary:focus {
     background: #5987C6;
     border-color: #5987C6;
+}
+
+/****** links ******/
+
+.make-link {
+    padding: 0 30px 15px 30px;
+}
+.make-link a {
+    text-decoration: none;
+}
+.make-link a i {
+    margin-left: 10px;
 }
 
 /****** cards ******/
@@ -779,6 +799,29 @@ a.label.label-search-tag {
     margin-bottom: 0;
 }
 
+/************ logged in homepage ************/
+
+/****** active groups ******/
+
+.active-groups {
+    padding: 30px;
+}
+.active-groups.small-h2 h2 {
+    margin-bottom: 20px;
+}
+.active-groups .community-list {
+    border: none;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/****** top contributors ******/
+
+.top-contributors {
+    padding: 30px;
+}
+
 /************ public homepage ************/
 
 /****** hero ******/
@@ -855,11 +898,13 @@ a.label.label-search-tag {
     flex-basis: 100%;
     position: relative;
 }
-.slider-content .community-list .card {
+.slider-content .community-list .card,
+.active-groups .community-list {
     display: flex;
     flex-direction: column;
 }
-.slider-content .community-list .card > div {
+.slider-content .community-list .card > div,
+.active-groups .community-list > div {
     width: 100%;
     padding: 0;
 }
@@ -886,17 +931,14 @@ a.label.label-search-tag {
 }
 
 /*** communities list ***/
-.home .slider-content a[id*="lnkAddCommunity"],
-.home .slider-content .Count,
-.home .slider-content .Count + .form-inline,
-.home .slider-content .community-list .col-md-7 .col-md-12 p:last-of-type,
-.home .slider-content .community-list .btn-community-stats-static:not([qa-attribute*="community-discussions-count-btn"]) {
+
+.home .community-list .btn-community-stats-static:not([qa-attribute*="community-discussions-count-btn"]) {
     display: none;
 }
-.slider-content .community-list .no-gutter > .pull-right {
+.community-list .no-gutter > .pull-right {
     float: none !important;
 }
-.slider-content .community-list .btn-community-stats-static {
+.community-list .btn-community-stats-static {
     font-weight: 600;
     font-size: 10px;
     line-height: 1.4;
@@ -908,14 +950,14 @@ a.label.label-search-tag {
     border-radius: 60px;
     text-transform: uppercase;
 }
-.slider-content .community-list .btn-community-stats-static::before {
+.community-list .btn-community-stats-static::before {
     font-family: IFT;
     content: '\f00a';
     font-weight: 400;
     float: left;
     margin-right: 10px;
 }
-.slider-content .community-list .btn-community-stats-static .badge {
+.community-list .btn-community-stats-static .badge {
     float: left;
     margin-right: 2px;
     background: transparent;
@@ -926,6 +968,13 @@ a.label.label-search-tag {
     letter-spacing: 0.5px;
     color: #4367A8;
     top: 0;
+}
+.active-groups .community-list .btn-community-stats-static,
+.active-groups .community-list .btn-community-stats-static .badge {
+    color: #606060;
+}
+.active-groups .community-list .btn-community-stats-static::before {
+    color: #4367a8;
 }
 
 /****** network with peers ******/
@@ -1075,11 +1124,26 @@ a.label.label-search-tag {
     align-items: center;
     padding: 50px 40px;
 }
+.ad-space.small-ad {
+    margin-top: 40px;
+}
+.ad-space.small-ad .HtmlContent {
+    flex-direction: column;
+    min-height: 290px;
+    padding: 45px 35px;
+    align-items: flex-start;
+}
+.ad-space.small-ad em {
+    align-self: flex-end;
+}
 .ad-space h2 {
     color: #fff;
     font-size: 42px;
     margin-top: 0;
     margin-bottom: 0;
+}
+.ad-space.small-ad h2 {
+    font-size: 30px;
 }
 
 /************ footer ************/
@@ -1287,10 +1351,17 @@ a.label.label-search-tag {
 
 @media (max-width: 650px) {
     .ad-space .HtmlContent {
-        display: block;
+        flex-direction: column;
+        min-height: 290px;
+        padding: 45px 35px;
+        align-items: flex-start;
+    }
+    .ad-space em {
+        align-self: flex-end;
     }
     .ad-space h2 {
         margin-bottom: 20px;
+        font-size: 30px;
     }
 }
 
