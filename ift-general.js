@@ -78,10 +78,19 @@ function handleDateBlocks() {
     });
 }
 
+function handleHero() {
+    var hero = $('.private-hero'),
+        name = $.trim($('#ProfileContainer h4').text()),
+        nameH1 = '<h1>' + name + '!</h1>';
+
+    $(nameH1).insertAfter($(hero).find('.HtmlContent > h2'));
+}
+
 $(function () {
     handleAnnouncementBar();
     handleSearch();
     handleHangingCards();
     handleMostPopularStories();
     handleDateBlocks();
+    handleHero();
 });

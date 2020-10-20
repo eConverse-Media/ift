@@ -91,6 +91,11 @@ body {
     margin-bottom: 20px;
 }
 
+/******  backgrounds ******/
+.bg-gray {
+    background: #F7F7F7;
+}
+
 /****** minimum widths ******/
 .home div[class*="col-md-"] {
     min-height: 0;
@@ -920,10 +925,40 @@ a.label.label-search-tag {
 
 /************ logged in homepage ************/
 
+/****** hero ******/
+
+.private-hero {
+    padding: 55px 70px 150px 70px;
+    position: relative;
+    border-bottom: 45px solid #FFD106;
+}
+.private-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(38,45,60,0.6);
+}
+.private-hero > * {
+    position: relative;
+}
+.private-hero .HtmlContent {
+    padding-top: 75px;
+    width: 75%;
+}
+.private-hero h2,
+.private-hero h1 {
+    margin: 0;
+    color: #fff;
+}
+
 /****** events ******/
 
 .private-events {
     margin-top: 105px;
+    margin-bottom: 95px;
 }
 .HLEventList ul li .timeAgoFormat,
 .HLEventList ul li div[id*="LocationPanel"] {
@@ -1086,6 +1121,13 @@ a.label.label-search-tag {
 }
 .top-contributors ul li:nth-child(5) .points-label::before {
     content: '5th';
+}
+
+/****** suggested contacts ******/
+
+.suggested-contacts {
+    margin-top: 65px;
+    margin-bottom: 50px;
 }
 
 /************ public homepage ************/
