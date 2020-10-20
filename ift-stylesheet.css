@@ -370,7 +370,7 @@ button:focus {
     border-color: #5987C6;
 }
 
-/****** links ******/
+/****** links and landing control buttons ******/
 
 .make-link {
     padding: 0 30px 15px 30px;
@@ -378,13 +378,39 @@ button:focus {
 .make-link a {
     text-decoration: none;
 }
-.make-link a i {
+.HLLandingControl div[id*="More"] .col-md-12,
+.HLLandingControl div[id*="BottomLink"] .col-md-12,
+.HLLandingControl div[id*="LinkToCalendar"] .col-md-12 {
+    padding: 0;
+}
+.HLLandingControl div[id*="More"] a,
+.HLLandingControl div[id*="BottomLink"] a,
+.HLLandingControl div[id*="LinkToCalendar"] a {
+    padding: 0;
+    border: none;
+}
+.HLLandingControl div[id*="More"] a:hover,
+.HLLandingControl div[id*="More"] a:focus,
+.HLLandingControl div[id*="BottomLink"] a:hover,
+.HLLandingControl div[id*="BottomLink"] a:focus,
+.HLLandingControl div[id*="LinkToCalendar"] a:hover,
+.HLLandingControl div[id*="LinkToCalendar"] a:focus {
+    background: transparent;
+    color: #5987C6;
+}
+.make-link a::after,
+.HLLandingControl div[id*="More"] a::after,
+.HLLandingControl div[id*="BottomLink"] a::after,
+.HLLandingControl div[id*="LinkToCalendar"] a::after {
+    font-family: IFT;
+    content: '\f00d';
     margin-left: 10px;
 }
 
 /****** cards ******/
 
-.card {
+.card,
+.col-md-8 .ContentUserControl:not(.slider-content) .HLLandingControl ul li {
     padding: 30px;
     background: #F7F7F7;
     margin-bottom: 35px;
@@ -405,6 +431,20 @@ button:focus {
 .card.blue h2,
 .card.blue p {
     color: #fff;
+}
+
+/*** landing control cards ***/
+.col-md-8 .ContentUserControl:not(.slider-content) .HLLandingControl ul li {
+    border-bottom: none;
+    margin-bottom: 10px;
+    padding: 25px;
+    border-radius: 0;
+}
+.col-md-8 .ContentUserControl:not(.slider-content) .HLLandingControl ul li:last-child {
+    margin-bottom: 20px;
+}
+.col-md-8 .small-h2 .HLLandingControl h2 {
+    margin-bottom: 15px;
 }
 
 /*** hanging cards ***/
@@ -867,7 +907,7 @@ a.label.label-search-tag {
     text-decoration: none;
 }
 
-/*** events ***/
+/*** public events ***/
 .HLLandingControl.HLEventList .Content ul li .timeAgoFormat,
 .HLLandingControl.HLEventList .Content ul li .timeAgoFormat + div {
     font-size: 16px;
@@ -879,6 +919,90 @@ a.label.label-search-tag {
 }
 
 /************ logged in homepage ************/
+
+/****** events ******/
+
+.private-events {
+    margin-top: 105px;
+}
+.HLEventList ul li .timeAgoFormat,
+.HLEventList ul li div[id*="LocationPanel"] {
+    display: inline-block;
+    margin-top: 25px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #575451;
+}
+.HLEventList ul li .timeAgoFormat {
+    margin-right: 50px;
+}
+.HLEventList ul li .timeAgoFormat::before,
+.HLEventList ul li div[id*="LocationPanel"]::before {
+    color: #4367A8;
+    font-size: 16px;
+    line-height: 1;
+    margin-right: 10px;
+    float: left;
+    font-family: IFT;
+}
+.HLEventList ul li .timeAgoFormat::before {
+    content: '\f00b';
+}
+.HLEventList ul li div[id*="LocationPanel"]::before {
+    content: '\f00c';
+}
+
+/*** date blocks ***/
+.HLEventList ul li > .row {
+    display: flex;
+}
+.HLEventList ul li .col-md-2 {
+    width: 110px;
+    margin-right: 35px;
+    float: left;
+    flex-grow: 0;
+    flex-shrink: 1;
+    display: flex;
+}
+.HLEventList ul li .col-md-10 {
+    width: calc(100% - 145px);
+    float: left;
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+.HLEventList ul li .col-md-2 > .margin-bottom-medium {
+    margin-bottom: 0;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+}
+.HLEventList ul li .date-block {
+    width: 110px;
+    background: #4367A8;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    min-height: 110px;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    font-weight: 800;
+    line-height: 1;
+    color: #fff;
+}
+.HLEventList ul li .date-block .calendar-day {
+    display: none;
+}
+.HLEventList ul li .date-block .calendary-number {
+    font-size: 54px;
+    letter-spacing: -0.05em;
+}
+.HLEventList ul li .date-block .calendar-month {
+    font-size: 21px;
+    text-transform: uppercase;
+}
 
 /****** active groups ******/
 
@@ -1512,6 +1636,24 @@ a.label.label-search-tag {
     .popular-stories .col-md-6:first-child {
         padding-right: 15px;
         padding-bottom: 50px;
+    }
+}
+
+/****** private homepage ******/
+
+/*** private events ***/
+
+@media (max-width: 525px) {
+    .private-events .HLLandingControl ul li > .row {
+        flex-direction: column;
+    }
+    .private-events .HLLandingControl ul li > .row .col-md-2,
+    .private-events .HLLandingControl ul li > .row .col-md-10 {
+        width: 100%;
+    }
+    .private-events .HLLandingControl ul li > .row .col-md-2 {
+        margin-right: 0;
+        margin-bottom: 20px;
     }
 }
 

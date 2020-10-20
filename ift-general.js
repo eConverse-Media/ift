@@ -54,9 +54,34 @@ function handleMostPopularStories() {
     });
 }
 
+function handleDateBlocks() {
+    $('.private-events .HLLandingControl ul li').each(function () {
+
+        // handle date block
+
+        var self = $(this),
+            month = $(self).find('.date-block .calendar-month'),
+            text = $(month).text();
+
+        text = $.trim(text);
+        text = text.substring(0, 3);
+        $(month).text(text);
+
+        // handle date
+
+        var date = $(self).find('.timeAgoFormat'),
+            location = $(self).find('div[id*="LocationPanel"]'),
+            parent = $(date).closest('.col-md-12.no-pad');
+
+        $(date).appendTo(parent);
+        $(location).appendTo(parent);
+    });
+}
+
 $(function () {
     handleAnnouncementBar();
     handleSearch();
     handleHangingCards();
     handleMostPopularStories();
+    handleDateBlocks();
 });
