@@ -535,6 +535,85 @@ button:focus {
     }
 }
 
+/****** round profile images ******/
+
+.Welcome .imgButton.btn,
+a[id*="ProfileImage"]:not([id*="NameLink"]):not([id*="ManageDropDown"]),
+a[id*="UserImageDisplay"],
+a[id*="Contacts_PictureLink"],
+a[id*="lnkDisplay"],
+a[id*="Welcome_Details_ProfileLink"],
+.list-group-item-image,
+a[title="User Name Image"],
+a[oldtitle="User Name Image"],
+.member-dashboard-img a,
+.dashboard-col-3 ul li .col-sm-2 a,
+.HLEngagement .Picture a,
+td.ProfilePic > a {
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    background-color: #f7f7f7;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+}
+.Welcome .imgButton.btn {
+    background-color: #fff;
+}
+.list-group-item-image {
+    width: 40px;
+    height: 40px;
+}
+.list-group-item-nochild .list-group-item-image {
+    width: 20px;
+    height: 20px;
+}
+.Welcome button.btn-default.btn.imgButton {
+    width: 30px;
+    height: 30px;
+    min-height: 30px;
+    border: none;
+    margin-left: 10px;
+}
+.text-muted-h2 a[id*="ImageControl_lnkDisplay"] {
+    width: 140px;
+    height: 140px;
+    background: #f9f9f9;
+}
+.HLEngagement .Picture a {
+    width: 50px;
+    height: 50px;
+}
+a[id*="Welcome_Details_ProfileLink"] {
+    width: 60px;
+    height: 60px;
+}
+
+.imgButton img,
+a[id*="ProfileImage"] img,
+a[id*="UserImageDisplay"] img,
+a[id*="Contacts_PictureLink"] img,
+a[id*="lnkDisplay"] img,
+a[id*="Welcome_Details_ProfileLink"] img,
+.list-group-item-image img,
+a[title="User Name Image"] img,
+a[oldtitle="User Name Image"] img,
+.member-dashboard-img img,
+.dashboard-col-3 ul li .col-sm-2 a img,
+.HLEngagement .Picture a img,
+td.ProfilePic > a > img {
+    position: relative;
+    max-height: 100% !important;
+    width: auto;
+}
+
+.member-directory .member-picture {
+    text-align: center;
+}
+
 /************ header ************/
 
 #MPOuterMost.full #HEADER {
