@@ -1187,6 +1187,9 @@ a.label.label-search-tag {
     padding-left: 5px;
     padding-right: 5px;
 }
+.active-groups .pagination {
+    display: none;
+}
 
 /****** top contributors ******/
 
@@ -1255,6 +1258,11 @@ a.label.label-search-tag {
 }
 .top-contributors ul li:nth-child(5) .points-label::before {
     content: '5th';
+}
+
+/****** networks ******/
+.networks-row .card.yellow {
+    margin-bottom: 95px;
 }
 
 /****** suggested contacts ******/
