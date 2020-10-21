@@ -1,4 +1,6 @@
 $(function () {
+
+    // handle public homepage sliders
     $('.slider-content .community-list').wrapAll('<ul class="communities-list" />');
     $('.slider-content .Content ul > li, .slider-content .community-list').wrapInner('<div class="card" />');
     $('.slider-content .Content ul, .slider-content ul.communities-list').each(function () {
@@ -27,5 +29,13 @@ $(function () {
         });
         $(prevArrow).wrap('<div class="slider-buttons" />');
         $(nextArrow).insertAfter(prevArrow);
+    });
+
+    // handle hero announcements
+    $('.hero-announcements .HLLandingControl .Content ul.include-ul').slick({
+        dots: false,
+        arrows: true,
+        prevArrow: '<button type="button" class="slick-arrow prev-arrow"><i class="ift ift-chevron-left"></i></button>',
+        nextArrow: '<button type="button" class="slick-arrow next-arrow"><i class="ift ift-chevron-right"></i></button>'
     });
 });

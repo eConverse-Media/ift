@@ -84,6 +84,18 @@ function handleHero() {
         nameH1 = '<h1>' + name + '!</h1>';
 
     $(nameH1).insertAfter($(hero).find('.HtmlContent > h2'));
+
+    // handle announcements
+    $('.hero-announcements').appendTo(hero);
+}
+
+function handleBylines() {
+    $('.HLLandingControl ul li').each(function () {
+        var self = $(this),
+            byline = $(self).find('.ByLine');
+
+        $(byline).appendTo(self);
+    });
 }
 
 $(function () {
@@ -93,4 +105,5 @@ $(function () {
     handleMostPopularStories();
     handleDateBlocks();
     handleHero();
+    handleBylines();
 });

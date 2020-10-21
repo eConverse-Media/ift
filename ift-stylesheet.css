@@ -380,7 +380,8 @@ button:focus {
 .make-link {
     padding: 0 30px 15px 30px;
 }
-.make-link a {
+.make-link a,
+.hero-announcements .HLLandingControl .HLContainer a {
     text-decoration: none;
 }
 .HLLandingControl div[id*="More"] .col-md-12,
@@ -406,7 +407,8 @@ button:focus {
 .make-link a::after,
 .HLLandingControl div[id*="More"] a::after,
 .HLLandingControl div[id*="BottomLink"] a::after,
-.HLLandingControl div[id*="LinkToCalendar"] a::after {
+.HLLandingControl div[id*="LinkToCalendar"] a::after,
+.hero-announcements .HLLandingControl .HLContainer a::after {
     font-family: IFT;
     content: '\f00d';
     margin-left: 10px;
@@ -439,6 +441,9 @@ button:focus {
 }
 
 /*** landing control cards ***/
+.col-md-8 .ContentUserControl:not(.slider-content) .HLLandingControl {
+    padding-right: 30px;
+}
 .col-md-8 .ContentUserControl:not(.slider-content) .HLLandingControl ul li {
     border-bottom: none;
     margin-bottom: 10px;
@@ -851,10 +856,16 @@ td.ProfilePic > a > img {
 }
 .ContentUserControl .HLLandingControl,
 .HLLandingControl .Content,
-.HLandingControl ul {
+.HLandingControl ul,
+.HLLandingControl .Content .HLContainer {
     padding: 0;
     margin: 0;
     border: none;
+}
+.Byline,
+.ByLine {
+    font-size: 12px;
+    line-height: 1.33;
 }
 
 /****** all content list ******/
@@ -931,6 +942,7 @@ a.label.label-search-tag {
     padding: 55px 70px 150px 70px;
     position: relative;
     border-bottom: 45px solid #FFD106;
+    display: flex;
 }
 .private-hero::before {
     content: '';
@@ -946,12 +958,134 @@ a.label.label-search-tag {
 }
 .private-hero .HtmlContent {
     padding-top: 75px;
-    width: 75%;
+    flex-basis: 75%;
 }
 .private-hero h2,
 .private-hero h1 {
     margin: 0;
     color: #fff;
+}
+
+/*** announcements ***/
+.hero-announcements {
+    background: #fff;
+    flex-basis: 25%;
+    width: 25%;
+    padding: 65px 30px 25px 30px;
+}
+.hero-announcements div[id*="MoreLinkPanel"] {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+}
+.hero-announcements div[id*="MoreLinkPanel"] a {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 1.33;
+}
+.hero-announcements div[id*="MoreLinkPanel"] a::after {
+    display: none;
+}
+.hero-announcements .HLLandingControl ul li {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+.hero-announcements .HLLandingControl ul li h3 {
+    margin-bottom: 45px;
+}
+.hero-announcements .HLLandingControl ul li .content-row > .clear-ul-style > .margin-top-small,
+.hero-announcements .HLLandingControl .row.heading,
+.hero-announcements .DropDownGearBorderTop {
+    display: none;
+}
+
+/* slider arrows */
+.hero-announcements .slick-arrow {
+    position: absolute;
+    bottom: -25px;
+    transform: translateY(50%);
+}
+.hero-announcements .next-arrow {
+    right: 0px;
+}
+.hero-announcements .prev-arrow {
+    right: 50px;
+}
+
+/****** latest activity ******/
+
+.ask-a-question {
+    position: absolute;
+    z-index: 10;
+    top: -105px;
+    right: 45px;
+}
+
+.latest-activity {
+    margin-top: -120px;
+    position: relative;
+}
+.latest-activity::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -30px;
+    right: 0;
+    background: #fff;
+    height: 160px;
+}
+.latest-activity::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -45px;
+    width: 45px;
+    height: 85px;
+    background: #FFD106;
+}
+.latest-activity .HLLandingControl {
+    position: relative;
+}
+
+.col-md-8 .ContentUserControl .HLLandingControl.SearchResults ul li {
+    padding-left: 105px;
+}
+.col-md-8 .HLLandingControl.SearchResults ul li .col-md-2.col-sm-2 {
+    position: absolute;
+    left: -75px;
+    top: 0;
+}
+.col-md-8 .HLLandingControl.SearchResults ul li .col-md-7.col-sm-7 {
+    padding: 0;
+}
+.col-md-8 .HLLandingControl ul li a[id*="lnkDisplay"] {
+    width: 55px;
+    height: 55px;
+}
+.SearchResults.HLLandingControl .title-row img {
+    max-width: unset;
+}
+.col-md-8 .HLLandingControl ul li div[id*="Description"] {
+    margin-bottom: 15px;
+}
+.col-md-8 .HLLandingControl ul li h5 {
+    margin: 0;
+    position: absolute;
+    bottom: -30px;
+    right: 0;
+}
+.col-md-8 .HLLandingControl ul li h5 a {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1;
+    padding: 3px 12px;
+    background: #fff;
+    border-radius: 100px;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 10px;
+    text-transform: none;
 }
 
 /****** events ******/
@@ -1682,6 +1816,86 @@ a.label.label-search-tag {
 }
 
 /****** private homepage ******/
+
+/*** hero ***/
+@media (max-width: 1200px) {
+    .private-hero .HtmlContent {
+        flex-basis: 60%;
+    }
+    .private-hero .hero-announcements {
+        flex-basis: 40%;
+        width: 40%;
+    }
+}
+@media (max-width: 991px) {
+    .private-hero {
+        display: block;
+    }
+    .private-hero .HtmlContent {
+        padding-bottom: 50px;
+    }
+    .private-hero .hero-announcements {
+        width: 100%;
+    }
+}
+@media (max-width: 650px) {
+    .private-hero {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .private-hero .HtmlContent {
+        padding-top: 0;
+    }
+}
+
+/*** landing controls ***/
+@media (max-width: 991px) {
+    .col-md-8 .ContentUserControl:not(.slider-content) .HLLandingControl {
+        padding-right: 0;
+    }
+    .ask-a-question {
+        top: 20px;
+        right: 15px;
+    }
+    .latest-activity::before {
+        right: -30px;
+    }
+    .latest-activity::after {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .col-md-8 .HLLandingControl ul li .ByLine {
+        margin-bottom: 30px;
+    }
+    .col-md-8 .HLLandingControl ul li h5 {
+        right: auto;
+        left: 0;
+        bottom: -55px;
+    }
+    .col-md-8 .HLLandingControl ul li h5 a {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+}
+@media (max-width: 475px) {
+    .col-md-8 .ContentUserControl .HLLandingControl.SearchResults ul li {
+        padding-left: 25px;
+    }
+    .col-md-8 .HLLandingControl.SearchResults ul li .col-md-2.col-sm-2 {
+        position: relative;
+        top: auto;
+        left: auto;
+        width: 50px;
+        margin-right: 15px;
+        float: left;
+    }
+    .col-md-8 .HLLandingControl.SearchResults ul li .col-md-7.col-sm-7 {
+        width: calc(100% - 65px);
+        float: left;
+    }
+}
 
 /*** private events ***/
 
