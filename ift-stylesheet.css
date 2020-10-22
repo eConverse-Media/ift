@@ -597,7 +597,7 @@ a[id*="Welcome_Details_ProfileLink"],
 .list-group-item-image,
 a[title="User Name Image"],
 a[oldtitle="User Name Image"],
-.member-dashboard-img a,
+.member-dashboard-img a[id*="Welcome_Details_ProfileLink"],
 .dashboard-col-3 ul li .col-sm-2 a,
 .HLEngagement .Picture a,
 td.ProfilePic > a {
@@ -622,19 +622,13 @@ td.ProfilePic > a {
     width: 20px;
     height: 20px;
 }
-.Welcome button.btn-default.btn.imgButton {
-    width: 30px;
-    height: 30px;
-    min-height: 30px;
-    border: none;
-    margin-left: 10px;
-}
 .text-muted-h2 a[id*="ImageControl_lnkDisplay"] {
     width: 140px;
     height: 140px;
     background: #f9f9f9;
 }
-.HLEngagement .Picture a {
+.HLEngagement .Picture a,
+.member-dashboard-img a[id*="Welcome_Details_ProfileLink"] {
     width: 50px;
     height: 50px;
 }
@@ -889,6 +883,56 @@ td.ProfilePic > a > img {
     bottom: 10px;
 }
 
+/****** overlay when nav/menu are open ******/
+body {
+    position: relative;
+}
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(38,45,60,0.7);
+    opacity: 0;
+    z-index: -1;
+    transition: .3s;
+    display: block;
+}
+body.menu-open,
+body.dashboard-open {
+    overflow: hidden;
+}
+body.menu-open::before,
+body.dashboard-open::after {
+    opacity: 1;
+    z-index: 25;
+    transition: .3s;
+}
+body.dashboard-open::after {
+    z-index: 25;
+}
+#MPOuterHeader {
+    background: #fff;
+    position: relative;
+}
+#MPOuterHeader.menu-open {
+    z-index: 50;
+}
+.dashboard-open #Logo {
+    z-index: 0;
+}
+#MPOuterHeader.menu-open .HLWelcome {
+    z-index: 20;
+}
+body.menu-open .anchor-arrow button,
+body.dashboard-open .anchor-arrow button {
+    opacity: 0;
+    transition: .3s;
+}
+
 /****** main nav ******/
 
 #NAV {
@@ -923,6 +967,213 @@ td.ProfilePic > a > img {
 }
 .navbar-default .navbar-nav>.dropdown>a .caret {
     display: none;
+}
+
+/****** member dashboard ******/
+
+.member-dashboard-wrap {
+    background: #F7F7F7;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04), 0px 2px 20px rgba(0, 0, 0, 0.05), 0px 4px 20px rgba(0, 0, 0, 0.05);
+    width: 505px;
+    max-width: 100%;
+    position: fixed;
+    right: 0;
+    transform: translateX(100%);
+    transition: .3s;
+    z-index: 30;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+.member-dashboard-wrap.open {
+    transform: none;
+    transition: .3s;
+}
+.member-dashboard {
+    padding: 30px 20px;
+}
+.HLWelcome {
+    position: relative;
+    z-index: 30;
+}
+
+/*** open/close button ***/
+
+#BtnShowProfile,
+.open #ProfileContainer {
+	display: none;
+}
+
+.HLWelcome .Welcome > .btn-group {
+	border-radius: 100px;
+	padding: 0;
+	position: relative;
+	border:none;
+	color: #fff;
+	position: relative;
+	width: 155px;
+}
+
+.HLWelcome .Welcome button.imgButton {
+	background-color: #fff;
+    position: absolute;
+    border: 2px solid #fff;
+	top: 0;
+	left: -1px;
+    bottom: 0;
+    padding: 0;
+    width: 35px;
+    height: 35px;
+}
+
+.HLWelcome .email-count {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    line-height: 15px;
+    background: #EB5757;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    z-index: 10;
+}
+
+.my-dashboard-button {
+    font-weight: 800;
+    font-size: 12px;
+    line-height: 35px;
+	height: 35px;
+	padding: 0 12px 0 48px;
+	border: none;
+	background: #4367A8;
+	border-radius: 100px;
+	color: #fff;
+}
+.dashboard-open .my-dashboard-button,
+.my-dashboard-button:hover,
+.my-dashboard-button:focus {
+    color: #4367A8;
+    background: #f7f7f7;
+}
+
+/*** email content ***/
+.email-content a {
+    color: #fff;
+    background: #EB5757;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 100px;
+    padding: 6px 12px;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 19px;
+    z-index: 10;
+    text-decoration: none;
+}
+.email-content a i {
+    font-weight: 400;
+    margin-right: 7px;
+    float: left;
+    font-size: 14px;
+    line-height: 19px;
+}
+
+/*** greeting ***/
+.member-dashboard-greeting {
+    color: #262D3C;
+}
+.member-dashboard-greeting span {
+    display: block;
+}
+.member-dashboard-greeting a {
+    font-size: 30px;
+    text-decoration: none;
+    color: #262D3C;
+}
+.member-dashboard-greeting a:hover,
+.member-dashboard-greeting a:focus {
+    color: #5987C6;
+    text-decoration: underline;
+}
+
+/*** h2s ***/
+.member-dashboard h2 {
+    padding-top: 15px;
+    margin-top: 35px;
+    border-top: 1px solid #E0E0E0;
+    padding-bottom: 10px;
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.33;
+    color: #262D3C;
+}
+
+/*** profile completion ***/
+
+.progress-section {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.progress {
+    border-radius: 100px;
+    background: #fff;
+    box-shadow: none;
+    margin-bottom: 50px;
+    border: 3px solid #fff;
+    height: 27px;
+}
+.progress-bar-info {
+    background: #FFD106;
+    border-radius: 100px;
+    font-size: 0;
+    box-shadow: none;
+}
+
+/*** dashboard links ***/
+.dashboard-link a {
+    display: inline-block;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+.dashboard-link a i {
+    font-weight: 400;
+    margin-right: 10px;
+    float: left;
+    line-height: inherit;
+}
+
+/*** dashboard buttons ***/
+.dashboard-buttons h2 {
+    margin-bottom: 30px;
+}
+.dashboard-buttons .make-buttons em {
+    display: block;
+    margin-bottom: 0;
+}
+.dashboard-buttons .make-buttons em a {
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+}
+.dashboard-buttons .make-buttons:last-child a {
+    margin-bottom: 0;
+}
+
+/*** logout button ***/
+.member-dashboard-wrap a[id*="logoutLink"] {
+    display: block;
+    text-align: center;
+    border: none;
+    color: #262D3C;
+    background: #FFD106;
+    font-size: 30px;
+    padding: 25px;
 }
 
 /************ landing controls ************/
@@ -1126,7 +1377,7 @@ a.label.label-search-tag {
     position: relative;
 }
 
-.col-md-8 .ContentUserControl .HLLandingControl.SearchResults ul li {
+.col-md-8 .ContentUserControl:not(.slider-content) .HLLandingControl.SearchResults ul li {
     padding-left: 105px;
 }
 .col-md-8 .HLLandingControl.SearchResults ul li .col-md-2.col-sm-2 {
@@ -2001,46 +2252,11 @@ a.label.label-search-tag {
         content: '\f000';
     }
 
-    /* overlay when nav/menu are open */
-    body {
-        position: relative;
-    }
-    body::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: 0;
-        background: rgba(38,45,60,0.7);
-        opacity: 0;
-        z-index: -1;
-        transition: .3s;
-        display: block;
-    }
-    body.menu-open {
-        overflow: hidden;
-    }
-    body.menu-open::before {
-        opacity: 1;
-        z-index: 20;
-        transition: .3s;
-    }
-    #MPOuterHeader {
-        background: #fff;
-        position: relative;
-        z-index: 20;
-    }
-    body.menu-open .anchor-arrow button {
-        opacity: 0;
-        transition: .3s;
-    }
-
     /* top menu */
 
     .top-menu {
         position: relative;
-        z-index: 50;
+        z-index: 25;
     }
     .top-menu .menu-title-mobile {
         display: block;

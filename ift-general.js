@@ -1,6 +1,7 @@
 function toggleTopMenu() {
     $('.top-menu').toggleClass('open');
     $('body').toggleClass('menu-open');
+    $('#MPOuterHeader').toggleClass('menu-open');
 }
 
 function handleMobileNav() {
@@ -13,6 +14,7 @@ function handleMobileNav() {
     $('.navbar-toggle').click(function () {
         $('body').toggleClass('menu-open');
         $('#NAV').toggleClass('open');
+        $('#MPOuterHeader').toggleClass('menu-open');
     });
 }
 
