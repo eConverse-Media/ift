@@ -1,3 +1,21 @@
+function toggleTopMenu() {
+    $('.top-menu').toggleClass('open');
+    $('body').toggleClass('menu-open');
+}
+
+function handleMobileNav() {
+
+    // handle moving TTL to nav on mobile
+
+    $('#MPAuxNav ul.level1').clone().insertAfter('.navbar-nav');
+
+    // handle nav button toggle
+    $('.navbar-toggle').click(function () {
+        $('body').toggleClass('menu-open');
+        $('#NAV').toggleClass('open');
+    });
+}
+
 function handleAnnouncementBar() {
     $('.announcement-bar').append('<button type="button" onclick="closeAnnouncement();"><i class="ift ift-close ift-2x"></i></button>');
 }
@@ -8,6 +26,7 @@ function closeAnnouncement() {
 
 function handleSearch() {
     $('#NAV .navbar-nav').after('<button type="button" class="search-btn-top"></button>');
+    $('#searchColumn .form-control').attr('placeholder', 'Search by keyword');
 }
 
 function topOfPage() {
@@ -106,4 +125,5 @@ $(function () {
     handleDateBlocks();
     handleHero();
     handleBylines();
+    handleMobileNav();
 });
