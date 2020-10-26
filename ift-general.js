@@ -76,7 +76,7 @@ function handleMostPopularStories() {
 }
 
 function handleDateBlocks() {
-    $('.private-events .HLLandingControl ul li').each(function () {
+    $('.private-events .HLLandingControl ul li, .interior .HLEventList ul li').each(function () {
 
         // handle date block
 
