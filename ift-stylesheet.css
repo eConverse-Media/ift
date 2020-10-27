@@ -2243,6 +2243,42 @@ a.label.label-search-tag {
     margin-bottom: 0;
 }
 
+/************ interior pages ************/
+
+/****** breadcrumbs ******/
+
+#MPOuterMost.full #BreadCrumb {
+    max-width: 100%;
+}
+#BreadCrumb::before,
+#BreadCrumb::after {
+    content: ' ';
+    display: table;
+}
+#BreadCrumb::after {
+    clear: both;
+}
+.breadcrumb {
+    padding: 12px 55px 12px calc(50% - 585px);
+    float: left;
+    background-color: #F7F7F7;
+    color: #262D3C;
+    font-size: 12px;
+    line-height: 20px;
+}
+.breadcrumb a {
+    text-decoration: none;
+    font-weight: 600;
+}
+.breadcrumb>li+li:before {
+    color: #4367A8;
+    padding: 0 10px;
+    font-family: IFT;
+    content: '\f00d';
+    font-size: 6px;
+    float: left;
+}
+
 /************ pagination ************/
 .pagination>li>a {
     color: #333;
@@ -2848,7 +2884,8 @@ a.label.label-search-tag {
 /****** community pages ******/
 
 @media (max-width: 1200px) {
-    .group-members .panel-body .row {
+    .group-members .panel-body .row,
+    .commHTMLOptionsToAttach > .row  {
         margin-left: -15px;
         margin-right: -15px;
     }
@@ -2866,7 +2903,8 @@ a.label.label-search-tag {
     }
 }
 @media (max-width: 768px) {
-    .group-members .panel-body .row {
+    .group-members .panel-body .row,
+    .commHTMLOptionsToAttach > .row  {
         margin-left: 0;
         margin-right: 0;
     }
@@ -2877,5 +2915,17 @@ a.label.label-search-tag {
 @media (max-width: 450px) {
     .summary-edit {
         background-size: auto 200px;
+    }
+}
+
+/****** interior pages ******/
+
+@media (max-width: 1200px) {
+    #BreadCrumb.BreadCrumb {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .breadcrumb {
+        padding-left: 15px;
     }
 }
