@@ -61,18 +61,7 @@ function handleHangingCards() {
 function handleMostPopularStories() {
     handleBgImage($('.popular-stories-bg'), $('.popular-stories'));
 
-    $('.popular-stories .HLLandingControl ul li').each(function () {
-        var self = $(this);
-
-        handleAjaxCall(self);
-
-        // handle community name text
-        var communityName = $(self).find('h5 a'),
-            title = $(self).find('h3');
-
-        $(communityName).insertBefore(title);
-        $(communityName).wrap('<h5 class="community-name" />');
-    });
+    $('.popular-stories .HLLandingControl ul li').wrapInner('<div class="text-container" />');
 }
 
 function handleDateBlocks() {

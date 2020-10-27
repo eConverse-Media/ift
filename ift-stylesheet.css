@@ -2001,8 +2001,11 @@ a.label.label-search-tag {
 .popular-stories .HLLandingControl ul li .text-container {
     flex-grow: 0;
     flex-shrink: 1;
-    flex-basis: 70%;
+    flex-basis: 100%;
     padding: 25px;
+}
+.popular-stories .HLLandingControl ul li .img-container + .text-container {
+    flex-basis: 100%;
 }
 .popular-stories .HLLandingControl ul li h3 {
     margin-top: 0;
@@ -2050,6 +2053,31 @@ a.label.label-search-tag {
 }
 
 /************  community pages ************/
+
+/****** community HTML ******/
+
+.summary-edit {
+    background-size: cover;
+    background-position: center;
+    padding-top: 190px;
+    margin-bottom: 75px;
+}
+.summary-edit .Content {
+    background: #fff;
+    padding: 25px 40px 40px 40px;
+    margin-bottom: -75px;
+    width: 66.66666667%;
+}
+.summary-edit #PageTitleH1 {
+    padding: 0;
+    margin-bottom: 20px !important;
+}
+.summary-edit .Content img {
+    display: none;
+}
+.summary-edit .JoinLeaveLink {
+    margin-top: 25px;
+}
 
 /****** discussions and events ******/
 .interior .col-md-8 .HLLandingControl {
@@ -2829,10 +2857,25 @@ a.label.label-search-tag {
     .group-members .panel-body div[id*="UpdatePanel"] > .row-bottom-margin > div[class*="col-md-"] > select {
         margin-top: 0;
     }
+    .summary-edit {
+        background-position: top center;
+        background-size: 100% auto;
+    }
+    .summary-edit .Content {
+        width: 100%;
+    }
 }
 @media (max-width: 768px) {
     .group-members .panel-body .row {
         margin-left: 0;
         margin-right: 0;
+    }
+    .summary-edit {
+        padding-top: 130px;
+    }
+}
+@media (max-width: 450px) {
+    .summary-edit {
+        background-size: auto 200px;
     }
 }
