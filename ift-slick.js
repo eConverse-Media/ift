@@ -31,9 +31,10 @@ $(function () {
         $(nextArrow).insertAfter(prevArrow);
     });
 
-    // handle hero announcements and member accomplishments
+    // handle hero announcements, member accomplishments, and interior sliders
     $('.member-slide').wrapAll('<div class="member-slider slick-dotted" />');
-    $('.hero-announcements .HLLandingControl .Content ul.include-ul, .member-slider').slick({
+    $('.interior-slide').wrapAll('<div class="interior-slider slick-dotted" />');
+    $('.hero-announcements .HLLandingControl .Content ul.include-ul, .member-slider, .interior-slider').slick({
         dots: false,
         arrows: true,
         prevArrow: '<button type="button" class="slick-arrow prev-arrow"><i class="ift ift-chevron-left"></i></button>',

@@ -108,6 +108,17 @@ function handleBylines() {
     });
 }
 
+function handleInteriorPages() {
+    handleBgImage($('.secondary-title'), $('.secondary-title'));
+    $('.interior-slide').each(function () {
+        var self = $(this);
+
+        $(self).find('img').wrap('<div class="img-container" />');
+        handleBgImage($('.img-container'), $('.img-container'));
+        $(self).find('.HtmlContent > *:not(.img-container)').wrapAll('<div class="text-container" />');
+    });
+}
+
 $(function () {
     handleAnnouncementBar();
     handleSearch();
@@ -117,4 +128,5 @@ $(function () {
     handleHero();
     handleBylines();
     handleMobileNav();
+    handleInteriorPages();
 });

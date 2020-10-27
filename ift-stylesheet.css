@@ -73,9 +73,20 @@ body {
     }
 }
 
+/*** fixing non-responsive images ***/
+img {
+    max-width: 100%;
+}
+
 /****** margins between sections ******/
 .margin-top-85 > div[class*="col-md-"][class*="section"]:not(:empty) {
     margin-top: 85px;
+}
+.margin-bottom-50 {
+    margin-bottom: 50px;
+}
+.margin-bottom-30 {
+    margin-bottom: 30px;
 }
 @media (max-width: 650px) {
     .margin-top-85 > div[class*="col-md-"][class*="section"]:not(:empty) {
@@ -191,6 +202,7 @@ h5, .h5 {
 a {
     font-weight: 700;
     color: #4367A8;
+    text-decoration: none;
 }
 a:hover,
 a:focus {
@@ -226,6 +238,10 @@ button:focus {
 .make-buttons em a {
     margin: 10px;
 }
+.make-buttons em a em {
+    margin: 0;
+    display: inline;
+}
 .make-buttons em a {
     display: inline-block;
     font-style: normal;
@@ -244,7 +260,8 @@ button:focus {
     color: #262D3C;
 }
 .make-buttons.white-buttons em a,
-.card.blue.make-buttons em a {
+.card.blue.make-buttons em a,
+.card.blue-overlay.make-buttons em a {
     background: #fff;
     border-color: #fff;
     color: #4367A8;
@@ -291,6 +308,8 @@ button:focus {
 .make-buttons.white-buttons em a:focus,
 .card.blue.make-buttons em a:hover,
 .card.blue.make-buttons em a:focus,
+.card.blue-overlay.make-buttons em a:hover,
+.card.blue-overlay.make-buttons em a:focus,
 .card.yellow.make-buttons em a:hover,
 .card.yellow.make-buttons em a:focus {
     background: #4367A8;
@@ -454,14 +473,31 @@ button:focus {
 .col-md-8 .ContentUserControl:not(.slider-content) .HLLandingControl ul li,
 .member-slide .HtmlContent {
     padding: 30px;
-    background: #F7F7F7;
+    background-color: #F7F7F7;
     margin-bottom: 35px;
 }
 .card.blue {
-    background: #4367A8;
+    background-color: #4367A8;
 }
 .card.yellow {
-    background: #FFD106;
+    background-color: #FFD106;
+}
+.card.blue-overlay {
+    position: relative;
+    text-align: center;
+}
+.card.blue-overlay::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: linear-gradient(0deg, rgba(67, 103, 168, 0.8), rgba(67, 103, 168, 0.8));
+}
+.card.blue-overlay h2,
+.card.blue-overlay .HtmlContent {
+    position: relative;
 }
 .card h2 {
     margin-top: 5px;
@@ -471,7 +507,9 @@ button:focus {
     margin-bottom: 20px;
 }
 .card.blue h2,
-.card.blue p {
+.card.blue p,
+.card.blue-overlay h2,
+.card.blue-overlay p {
     color: #fff;
 }
 
@@ -2279,6 +2317,28 @@ a.label.label-search-tag {
     float: left;
 }
 
+/****** secondary title ******/
+.secondary-title {
+    padding-top: 350px;
+    margin-bottom: 185px;
+    background-size: cover;
+    background-position: center;
+}
+.secondary-title .HtmlContent {
+    background: #fff;
+    width: 770px;
+    max-width: 100%;
+    margin-bottom: -105px;
+    padding: 25px 40px;
+}
+.secondary-title img {
+    display: none;
+}
+#PageTitleH1 {
+    padding: 0;
+    margin-bottom: 45px !important;
+}
+
 /************ pagination ************/
 .pagination>li>a {
     color: #333;
@@ -2303,6 +2363,126 @@ a.label.label-search-tag {
 .pagination>.active>span:focus {
     background-color: #4367A8;
     border-color: #4367A8;
+}
+
+/****** extra padding between sections ******/
+@media (min-width: 992px) {
+    .interior .col-md-4 + .col-md-8[class*="section"] {
+        padding-left: 35px;
+    }
+}
+
+/***** accordions ******/
+.accordion-heading button {
+    font-size: 20px;
+    line-height: 1.35;
+    font-weight: 600;
+    color: #262D3C;
+    background: #EDEDEF;
+    padding: 15px 30px;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+    transition: .3s;
+    display: block;
+    width: 100%;
+    text-align: left;
+    border-radius: 0;
+}
+.accordion-heading button:hover,
+.accordion-heading button:focus,
+.open .accordion-heading button {
+    color: #fff;
+    background: #5987C6;
+    transition: .3s;
+}
+.accordion-heading button::after {
+    font-family: IFT;
+    float: right;
+    color: #5987c6;
+    font-size: 24px;
+    line-height: 27px;
+    content: '\f015';
+}
+.accordion-heading button:hover::after,
+.accordion-heading button:focus::after {
+    color: #fff;
+}
+.open .accordion-heading button::after {
+    content: '\f016';
+    color: #fff;
+}
+.accordion-text {
+    display: none;
+    background: #F7F7F7;
+    padding: 25px;
+}
+.accordion-wrap {
+    margin-bottom: 30px;
+}
+.accordion-wrap .ContentItemHtml, .accordion-wrap .ContentItemHtml:hover {
+    transition: none !important;
+}
+
+/****** interior page slider ******/
+
+.interior-slide .HtmlContent {
+    display: flex;
+    flex-direction: row-reverse;
+}
+.interior-slide .text-container,
+.interior-slide .img-container {
+    flex-grow: 0;
+    flex-shrink: 1;
+}
+.interior-slide .img-container {
+    width: 250px;
+}
+.interior-slide .text-container {
+    width: calc(100% - 250px);
+    background: #4367A8;
+    padding: 50px 50px 100px 50px;
+    position: relative;
+}
+.interior-slide .text-container::before {
+    font-family: IFT;
+    color: #000;
+    opacity: 0.1;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    content: '\f017';
+    font-size: 55px;
+}
+.interior-slide h3,
+.interior-slide p {
+    color: #fff;
+    position: relative;
+}
+.interior-slide h3 {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.interior-slide p {
+    font-weight: 600;
+    font-size: 14px;
+}
+.interior-slide .HtmlContent .img-container img {
+    display: none;
+}
+
+/*** arrows ***/
+.interior-slider .slick-arrow {
+    position: absolute;
+    bottom: -20px;
+    z-index: 10;
+}
+.interior-slider .prev-arrow {
+    left: 50px;
+}
+.interior-slider .next-arrow {
+    left: 100px;
 }
 
 /************ footer ************/
@@ -2927,5 +3107,11 @@ a.label.label-search-tag {
     }
     .breadcrumb {
         padding-left: 15px;
+    }
+
+}
+@media (max-width: 600px) {
+    .secondary-title {
+        padding-top: 150px;
     }
 }
