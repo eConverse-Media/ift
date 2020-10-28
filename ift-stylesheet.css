@@ -1433,6 +1433,8 @@ a.label.label-search-tag {
     position: relative;
     border-bottom: 45px solid #FFD106;
     display: flex;
+    background-size: cover;
+    background-position: center;
 }
 .private-hero::before {
     content: '';
@@ -1861,6 +1863,8 @@ a.label.label-search-tag {
     padding: 200px 200px 0 200px;
     border-bottom: 45px solid #FFD106;
     margin-bottom: 70px;
+    background-size: cover;
+    background-position: center;
 }
 .public-hero .HtmlContent {
     margin-bottom: -90px;

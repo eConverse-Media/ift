@@ -129,6 +129,14 @@ function handleHero() {
 
     // handle announcements
     $('.hero-announcements').appendTo(hero);
+
+    // handle background image
+    var heroSection = !!($('.private-hero').html()) ? $('.private-hero') : $('.public-hero'),
+        heroImages = $('.hero-bg-image').toArray(),
+        imgToSelect = Math.floor(Math.random() * (heroImages.length - 1)),
+        bgImageUrl = 'url("' + $(heroImages[imgToSelect]).find('img').attr('src') + '")';
+
+    $(heroSection).css('background-image', bgImageUrl);
 }
 
 function handleBylines() {
