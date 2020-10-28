@@ -27,8 +27,40 @@ function closeAnnouncement() {
 }
 
 function handleSearch() {
-    $('#NAV .navbar-nav').after('<button type="button" class="search-btn-top"></button>');
+    $('#NAV .navbar-nav').after('<button type="button" class="search-btn-top" onclick="toggleSearch();"></button>');
+    $('.search-btn-top').before($('.search-bar-top'));
     $('#searchColumn .form-control').attr('placeholder', 'Search by keyword');
+    $(document).click(function (e) {
+        var searchBar = $('.search-bar-top'),
+            searchButton = $('.search-btn-top'),
+            target = e.target;
+
+        if (!($(target).is(searchBar)) &&
+            !($(target).is(searchButton)) &&
+            !($(target).closest('.search-bar-top').html()) &&
+            !($(target).closest('.search-btn-top').html())) {
+                closeSearch();
+        }
+    });
+}
+
+function toggleSearch() {
+    if ($('.search-bar-top').hasClass('open')) {
+        closeSearch();
+    } else {
+        openSearch();
+    }
+}
+    
+function closeSearch() {
+    $('.search-bar-top').removeClass('open');
+    $('.search-btn-top').removeClass('open');
+}
+
+function openSearch() {
+    $('.search-bar-top').addClass('open');
+    $('.search-btn-top').addClass('open');
+    $('.search-bar-top .form-control').focus();
 }
 
 function topOfPage() {

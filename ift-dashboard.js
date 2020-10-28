@@ -14,7 +14,7 @@ $(function () {
 		unreadEmailCount = $('a[id^="Welcome_Details_MessagesCount"]').length !== 0 ? parseInt($('a[id^="Welcome_Details_MessagesCount"]').text()) : 0,
         emailContent = '<div class="email-content"><a href ="' + linkToInbox + '"><i class="ift ift-envelope"></i>' + unreadEmailCount + '</a></div>';
 
-    $(emailContent).prependTo('.member-dashboard-img');
+    $(emailContent).appendTo('.member-dashboard-img');
 
     // handle progress bar
 
