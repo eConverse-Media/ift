@@ -154,7 +154,7 @@ function handleInteriorPages() {
         var self = $(this);
 
         $(self).find('img').wrap('<div class="img-container" />');
-        handleBgImage($('.img-container'), $('.img-container'));
+        handleBgImage($(self).find('.img-container'), $(self).find('.img-container'));
         $(self).find('.HtmlContent > *:not(.img-container)').wrapAll('<div class="text-container" />');
     });
 }

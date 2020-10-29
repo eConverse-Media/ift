@@ -1261,6 +1261,37 @@ body.dashboard-open .anchor-arrow button {
     text-decoration: underline;
 }
 
+/*** points summary ***/
+.points-summary .col-md-8,
+.points-summary .col-md-4 .achievements,
+.points-summary .col-md-4 h3,
+.points-summary .alert.alert-warning,
+.points-summary .points > div:not(:first-child) {
+    display: none;
+}
+.points-summary .points .data {
+    margin-top: 20px;
+    padding: 4px 8px;
+    background-color: #FFD106;
+    border-radius: 100px;
+    border: none;
+    min-width: 0;
+    min-height: 0;
+}
+.points-summary .points .data,
+.points-summary .points .data::after {
+    font-weight: 800;
+    color: #262D3C;
+    font-size: 14px;
+    line-height: 19px;
+}
+.points-summary .points .data > div {
+    display: none;
+}
+.points-summary .points .data::after {
+    content: 'Pts';
+}
+
 /*** h2s ***/
 .member-dashboard h2 {
     padding-top: 15px;
@@ -2626,7 +2657,17 @@ a.label.label-search-tag {
 
 /****** interior page slider ******/
 
+.interior-slider .slick-track {
+    display: flex;
+}
+.interior-slider .interior-slide.slick-slide {
+    height: auto;
+    display: flex;
+}
 .interior-slide .HtmlContent {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
     display: flex;
     flex-direction: row-reverse;
 }
@@ -2663,6 +2704,7 @@ a.label.label-search-tag {
     font-weight: 600;
     font-size: 20px;
     margin-bottom: 30px;
+    margin-top: 0;
 }
 .interior-slide p {
     font-weight: 600;
@@ -3366,8 +3408,40 @@ a.label.label-search-tag {
     }
 
 }
+
+@media (max-width: 700px) {
+    .interior-slide .img-container {
+        width: 30%;
+    }
+    .interior-slide .text-container {
+        width: 70%;
+        padding: 30px;
+    }
+    .interior-slider .prev-arrow {
+        left: 30px;
+    }
+    .interior-slider .next-arrow {
+        left: 80px;
+    }
+}
 @media (max-width: 600px) {
     .secondary-title {
         padding-top: 150px;
+    }
+}
+@media (max-width: 475px) {
+    .interior-slide .HtmlContent {
+        flex-direction: column;
+    }
+    .interior-slide .img-container,
+    .interior-slide .text-container {
+        width: 100%;
+    }
+    .interior-slide .img-container {
+        height: 250px;
+        background-position-y: 20%;
+    }
+    .interior-slide .text-container {
+        flex-basis: calc(100% - 250px);
     }
 }
