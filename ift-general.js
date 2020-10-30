@@ -1,7 +1,7 @@
 function toggleTopMenu() {
-    $('.top-menu').toggleClass('open');
-    $('body').toggleClass('menu-open');
-    $('#MPOuterHeader').toggleClass('menu-open');
+    $('.top-menu .HtmlContent').toggleClass('open');
+    $('body').toggleClass('top-menu-open');
+    $('#MPOuterHeader').toggleClass('top-menu-open');
 }
 
 function handleMobileNav() {
@@ -9,12 +9,13 @@ function handleMobileNav() {
     // handle moving TTL to nav on mobile
 
     $('#MPAuxNav ul.level1').clone().insertAfter('.navbar-nav');
+    $('#NAV').clone().addClass('mobile-nav').appendTo('.top-menu');
 
     // handle nav button toggle
     $('.navbar-toggle').click(function () {
-        $('body').toggleClass('menu-open');
+        $('body').toggleClass('main-menu-open');
         $('#NAV').toggleClass('open');
-        $('#MPOuterHeader').toggleClass('menu-open');
+        $('#MPOuterHeader').toggleClass('main-menu-open');
     });
 }
 
