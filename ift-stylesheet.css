@@ -1638,8 +1638,8 @@ a.label.label-search-tag {
     position: relative;
 }
 
-.col-md-8 .ContentUserControl:not(.slider-content) .HLLandingControl.SearchResults ul li,
-.col-md-8 .ContentUserControl .HLLandingControl.HLDiscussions ul li {
+.col-md-8 .ContentUserControl:not(.slider-content) .HLLandingControl.SearchResults ul li.has-img,
+.col-md-8 .ContentUserControl .HLLandingControl.HLDiscussions ul li.has-img {
     padding-left: 105px;
     position: relative;
 }

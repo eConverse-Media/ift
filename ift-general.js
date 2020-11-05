@@ -178,6 +178,17 @@ function handleAnchorArrow() {
     });
 }
 
+function handleLandingControls() {
+    $('.col-md-8 .ContentUserControl:not(.slider-content) .HLLandingControl.SearchResults ul li, .col-md-8 .ContentUserControl .HLLandingControl.HLDiscussions ul li').each(function () {
+        var self = $(this),
+            img = $(self).find('a > img');
+
+        if (!!$(img).attr('src')) {
+            $(self).addClass('has-img');
+        }
+    });
+}
+
 $(function () {
     handleAnnouncementBar();
     handleSearch();
@@ -189,4 +200,5 @@ $(function () {
     handleMobileNav();
     handleInteriorPages();
     handleAnchorArrow();
+    handleLandingControls();
 });
