@@ -53,5 +53,18 @@ $(function () {
 
     });
 
+    $('body').click(function (e) {
+
+        var target = e.target;
+
+        if ($(target).is('body')) {
+            $('.member-dashboard-wrap').removeClass('open');
+            $('.HLWelcome').removeClass('dashboard-open');
+            $('body').removeClass('dashboard-open');
+            $('#MPOuterMost').removeClass('menu-open');
+        }
+
+    });
+
 
 });
