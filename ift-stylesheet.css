@@ -1225,7 +1225,9 @@ body.dashboard-open .anchor-arrow button {
     border-bottom-right-radius: 0;
 }
 
-.HLWelcome .Welcome button.btn.imgButton {
+.HLWelcome .Welcome button.btn.imgButton,
+.HLWelcome .Welcome button.btn.imgButton:hover,
+.HLWelcome .Welcome button.btn.imgButton:focus {
 	background-color: #fff;
     position: absolute;
     border: 2px solid #fff;
