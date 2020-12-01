@@ -32,7 +32,8 @@ $(function () {
     // create logout link
     var logoutLink = $('#ProfileContainer a[id*="logoutLink"]').clone();
 
-    $(logoutLink).appendTo('.member-dashboard-wrap');
+    $(logoutLink).appendTo('.member-dashboard');
+    $(logoutLink).wrap('<div class="logout-link" />');
 
     // handle button
 

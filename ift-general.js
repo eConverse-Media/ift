@@ -19,12 +19,34 @@ function handleMobileNav() {
     });
 }
 
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
 function handleAnnouncementBar() {
-    $('.announcement-bar').append('<button type="button" onclick="closeAnnouncement();"><i class="ift ift-close ift-2x"></i></button>');
+    var cookie = getCookie('announcementBar');
+    if (cookie != '') {
+        $('.announcement-bar').hide();
+    } else {
+        $('.announcement-bar').append('<button type="button" onclick="closeAnnouncement();"><i class="ift ift-close ift-2x"></i></button>');
+    }
 }
 
 function closeAnnouncement() {
     $('.announcement-bar').hide();
+    document.cookie = "announcementBar=true; path=/";
 }
 
 function handleSearch() {
