@@ -272,12 +272,21 @@ button:focus {
 }
 .make-buttons.white-buttons em a,
 .card.blue.make-buttons em a,
-.card.blue-overlay.make-buttons em a {
+.card.blue-overlay.make-buttons em a,
+.suggested-contacts .update-friend .btn-primary {
     background: #fff;
     border-color: #fff;
     color: #4367A8;
 }
-.make-buttons.hollow-buttons em a {
+.suggested-contacts .update-friend .btn-primary:hover,
+.suggested-contacts .update-friend .btn-primary:focus {
+    background: #fff;
+    border-color: #fff;
+    color: #4367A8;
+    opacity: 0.7;
+}
+.make-buttons.hollow-buttons em a,
+.suggested-contacts .update-friend .btn-default {
     background: transparent;
     border-color: #fff;
     color: #fff;
@@ -295,7 +304,9 @@ button:focus {
 }
 
 .make-buttons.hollow-buttons em a:hover,
-.make-buttons.hollow-buttons em a:focus {
+.make-buttons.hollow-buttons em a:focus,
+.suggested-contacts .update-friend .btn-default:hover,
+.suggested-contacts .update-friend .btn-default:focus {
     opacity: 0.7;
     background: transparent;
     border-color: #fff;
@@ -466,7 +477,8 @@ select {
     padding: 0 30px 15px 30px;
 }
 .make-link a,
-.hero-announcements .HLLandingControl .HLContainer a {
+.hero-announcements .HLLandingControl .HLContainer a,
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn {
     text-decoration: none;
     position: relative;
 }
@@ -477,7 +489,8 @@ select {
 }
 .HLLandingControl div[id*="More"] a,
 .HLLandingControl div[id*="BottomLink"] a,
-.HLLandingControl div[id*="LinkToCalendar"] a {
+.HLLandingControl div[id*="LinkToCalendar"] a,
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn {
     padding: 0;
     border: none;
     position: relative;
@@ -487,7 +500,9 @@ select {
 .HLLandingControl div[id*="BottomLink"] a:hover,
 .HLLandingControl div[id*="BottomLink"] a:focus,
 .HLLandingControl div[id*="LinkToCalendar"] a:hover,
-.HLLandingControl div[id*="LinkToCalendar"] a:focus {
+.HLLandingControl div[id*="LinkToCalendar"] a:focus,
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn:hover,
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn:focus {
     background: transparent;
     color: #5987C6;
     text-decoration: underline;
@@ -496,7 +511,8 @@ select {
 .HLLandingControl div[id*="More"] a::after,
 .HLLandingControl div[id*="BottomLink"] a::after,
 .HLLandingControl div[id*="LinkToCalendar"] a::after,
-.hero-announcements .HLLandingControl .HLContainer a::after {
+.hero-announcements .HLLandingControl .HLContainer a::after,
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn::after {
     font-family: IFT;
     content: '\f00d';
     position: absolute;
@@ -507,7 +523,9 @@ select {
 .HLLandingControl div[id*="BottomLink"] a:hover::after,
 .HLLandingControl div[id*="BottomLink"] a:focus::after,
 .HLLandingControl div[id*="LinkToCalendar"] a:hover::after,
-.HLLandingControl div[id*="LinkToCalendar"] a:focus::after {
+.HLLandingControl div[id*="LinkToCalendar"] a:focus::after,
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn:hover::after,
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn:focus::after {
     text-decoration: none;
 }
 
@@ -528,6 +546,7 @@ select {
 }
 .card.yellow {
     background-color: #FFD106;
+    color: #262D3C;
 }
 .card.blue-overlay {
     position: relative;
@@ -1901,12 +1920,145 @@ a.label.label-search-tag {
 .networks-row .card.yellow {
     margin-bottom: 95px;
 }
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row,
+.networks-row .MyNetworksControl .badge {
+    display: none;
+}
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(3),
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(5),
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(7) {
+    display: block;
+    flex-basis: 33%;
+}
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .col-md-3 {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget {
+    min-height: 140px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    background: #F7F7F7;
+    padding: 20px;
+}
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget h5 {
+    margin: 0;
+}
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget h5 a {
+    text-transform: none;
+    color: #262D3C;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+}
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn {
+    background: transparent;
+}
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget h5,
+.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options {
+    text-align: left;
+}
 
 /****** suggested contacts ******/
+.contacts-link {
+    float: right;
+    padding-top: 18px;
+    position: relative;
+    z-index: 10;
+    margin-right: 5px;
+}
 
 .suggested-contacts {
     margin-top: 65px;
     margin-bottom: 50px;
+}
+.suggested-contacts .HL-contact-suggestions .Content {
+    display: flex;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+.suggested-contacts .HL-contact-suggestions .Content > .row {
+    flex-basis: 33%;
+    padding: 0 20px;
+    flex-grow: 0;
+    flex-shrink: 1;
+    display: flex;
+    margin-top: 30px;
+}
+.suggested-contacts .HL-contact-suggestions .Content > .row > .col-md-12 {
+    background: #4367A8;
+    padding: 0 20px 15px 20px !important;
+}
+.suggested-contacts .HL-contact-suggestions .Content > .row > .col-md-12,
+.suggested-contacts .HL-contact-suggestions .Content > .row > .col-md-12 ul,
+.suggested-contacts .HL-contact-suggestions .Content > .row > .col-md-12 ul li,
+.suggested-contacts .HL-contact-suggestions ul li .title-row {
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: 100%;
+    display: flex;
+}
+.suggested-contacts .HL-contact-suggestions ul,
+.suggested-contacts .HL-contact-suggestions ul li {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+.suggested-contacts .HL-contact-suggestions ul li .title-row {
+    flex-direction: column;
+    align-items: center;
+}
+.suggested-contacts .HL-contact-suggestions ul li .title-row > div {
+    width: 100%;
+    text-align: center;
+}
+.suggested-contacts .HL-contact-suggestions ul li .title-row > .col-md-2.col-sm-2.col-xs-4 {
+    transform: translateY(-50%);
+}
+.suggested-contacts .HL-contact-suggestions ul li .title-row > .col-md-6.col-sm-6.col-xs-8 {
+    flex-grow: 1;
+}
+.suggested-contacts .HL-contact-suggestions ul li h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.suggested-contacts .HL-contact-suggestions ul li h3 a {
+    color: #fff;
+}
+.suggested-contacts .HL-contact-suggestions ul li .details {
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+.suggested-contacts .update-friend .btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0 8px;
+}
+.suggested-contacts .update-friend .btn-primary::after {
+    font-family: IFT;
+    content: '\f015';
+    margin-left: 8px;
+    font-size: 8px;
+    float: right;
 }
 
 /****** member accomplishments ******/
@@ -3523,6 +3675,52 @@ div[id*="divMessageThread"] > .row:not(:last-child) {
     .interior .HLEventList ul li > .row .col-md-2 {
         margin-right: 0;
         margin-bottom: 20px;
+    }
+}
+
+/*** networks ***/
+@media (max-width: 768px) {
+    .networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(3),
+    .networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(5),
+    .networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(7) {
+        flex-basis: 50%;
+    }
+}
+@media (max-width: 550px) {
+    .networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(3),
+    .networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(5),
+    .networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(7) {
+        flex-basis: 100%;
+    }
+}
+
+/*** suggested contacts ***/
+
+@media (max-width: 991px) {
+    .suggested-contacts .HL-contact-suggestions .Content {
+        flex-wrap: wrap;
+    }
+    .suggested-contacts .HL-contact-suggestions .Content > .row {
+        flex-basis: 50%;
+    }
+    .contacts-link {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .suggested-contacts {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .contacts-link {
+        margin-right: 10px;
+    }
+}
+
+@media (max-width: 550px) {
+    .suggested-contacts .HL-contact-suggestions .Content > .row {
+        flex-basis: 100%;
     }
 }
 

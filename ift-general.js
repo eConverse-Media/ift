@@ -211,6 +211,10 @@ function handleLandingControls() {
     });
 }
 
+function handleNetworks() {
+    $('.networks-row .MyNetworksControl .hero-widget').closest('.row').addClass('network-card');
+}
+
 $(function () {
     handleAnnouncementBar();
     handleSearch();
@@ -223,4 +227,5 @@ $(function () {
     handleInteriorPages();
     handleAnchorArrow();
     handleLandingControls();
+    handleNetworks();
 });
