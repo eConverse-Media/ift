@@ -597,12 +597,17 @@ select {
 }
 
 /*** hanging cards ***/
+.hanging-card.bg-image {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
 .hanging-card > a {
     display: block;
-    height: 210px;
     width: 100%;
     position: relative;
     text-decoration: none;
+    padding-top: 155px;
 }
 .hanging-card > a::before {
     content: '';
@@ -610,7 +615,7 @@ select {
     left: 0;
     top: 0;
     right: 0;
-    bottom: 0;
+    height: 210px;
     background: linear-gradient(0deg, rgba(67, 103, 168, 0.6), rgba(67, 103, 168, 0.6));
     opacity: 0;
     transition: .3s;
@@ -624,10 +629,8 @@ select {
     padding: 25px;
     background: #f7f7f7;
     color: #575451;
-    position: absolute;
-    left: 0;
-    right: 50px;
-    top: 155px;
+    position: relative;
+    margin-right: 50px;
     font-weight: 400;
 }
 .hanging-card .HtmlContent h3 {
@@ -1748,7 +1751,10 @@ a.label.label-search-tag {
 
 .private-events {
     margin-top: 105px;
+}
+.private-events + .make-link {
     margin-bottom: 95px;
+    padding-left: 0;
 }
 .HLEventList ul li .timeAgoFormat,
 .HLEventList ul li div[id*="LocationPanel"] {
