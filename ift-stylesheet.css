@@ -78,6 +78,11 @@ img {
     max-width: 100%;
 }
 
+/*** fixing lack of wrapping on community settings dropdown buttons ***/
+.CommunityManagementGearStatusPaddingL {
+    white-space: normal;
+}
+
 /****** margins between sections ******/
 .margin-top-85 > div[class*="col-md-"][class*="section"]:not(:empty) {
     margin-top: 85px;
