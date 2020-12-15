@@ -3275,6 +3275,9 @@ div[id*="divMessageThread"] > .row:not(:last-child) {
     #NAV {
         right: 15px;
     }
+    .navbar-nav {
+        overflow-y: scroll;
+    }
 }
 
 /* fixing indented content on profile on tablet screens */
