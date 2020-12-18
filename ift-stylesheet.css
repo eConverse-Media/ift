@@ -370,6 +370,10 @@ button:focus {
     padding: 2px 5px;
     border-radius: 0;
 }
+.form-control + .input-group-btn .btn {
+    padding: 7px 12px;
+    border: none;
+}
 
 .btn-default {
     background: #fff;
@@ -398,7 +402,9 @@ button:focus {
 .HL-contact-suggestions .btn-primary,
 .btn-group>.btn-success+.dropdown-toggle,
 .btn-info.disabled, .btn-info[disabled], fieldset[disabled] .btn-info, .btn-info.disabled:hover, .btn-info[disabled]:hover, fieldset[disabled] .btn-info:hover, .btn-info.disabled:focus, .btn-info[disabled]:focus, fieldset[disabled] .btn-info:focus, .btn-info.disabled:active, .btn-info[disabled]:active, fieldset[disabled] .btn-info:active, .btn-info.disabled.active, .btn-info[disabled].active, fieldset[disabled] .btn-info.active,
-.btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success[disabled].active, fieldset[disabled] .btn-success.active {
+.btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success[disabled].active, fieldset[disabled] .btn-success.active,
+.alert-warning .btn,
+.alert-warning .btn-group > .btn.dropdown-toggle:first-child {
     color: #262D3C;
     background: #FFD106;
     border-color: #FFD106;
@@ -408,6 +414,13 @@ button:focus {
 }
 .btn-success .caret {
     border-top-color: #262d3c;
+    transition: border-color .3s;
+}
+.btn-success:hover .caret,
+.btn-success:focus .caret,
+.btn-success:active .caret {
+    border-top-color: #fff;
+    transition: border-color .3s;
 }
 .btn-success:hover,
 .btn-success:active,
@@ -419,7 +432,14 @@ button:focus {
 .btn-group>.btn-success+.dropdown-toggle:focus,
 .btn-success:focus,
  .btn-success.active, 
- .open .dropdown-toggle.btn-success {
+ .open .dropdown-toggle.btn-success,
+ .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus,
+ .alert-warning .btn:hover,
+ .alert-warning .btn:focus,
+ .alert-warning .btn:active,
+ .alert-warning .btn-group > .btn.dropdown-toggle:first-child:focus,
+ .alert-warning .btn-group > .btn.dropdown-toggle:first-child:hover,
+ .alert-warning .btn-group > .btn.dropdown-toggle:first-child:active {
     color: #fff;
     background: #5987C6;
     border-color: #5987C6;
@@ -474,6 +494,11 @@ select {
     padding: 8px 22px !important;
     font-weight: 600 !important;
     color: #262D3C !important;
+}
+select.form-control {
+    height: auto;
+    font-size: 15px;
+    line-height: 20px;
 }
 
 /****** links and landing control buttons ******/
@@ -555,7 +580,6 @@ select {
 }
 .card.blue-overlay {
     position: relative;
-    text-align: center;
 }
 .card.blue-overlay::before {
     content: '';
@@ -900,7 +924,7 @@ td.ProfilePic > a > img {
     float: right;
 }
 .skiplinkholder a, .skiplinkholder a:link, .skiplinkholder a:visited {
-    left: calc(-500% - 500px);
+    left: calc(-500% - 550px);
     top: -250px;
     min-width: 300px;
 }
@@ -1019,8 +1043,8 @@ td.ProfilePic > a > img {
 .search-bar-top .SearchInputs .input-group-btn {
     width: 50px;
 }
-#searchColumn button[id*="SearchButton"],
-.search-bar-top button[id*="SearchButton"] {
+#searchColumn .input-group-btn button[id*="SearchButton"],
+.search-bar-top .input-group-btn button[id*="SearchButton"] {
     height: 50px;
     width: 50px;
     padding: 0;
@@ -1123,7 +1147,7 @@ body.dashboard-open .anchor-arrow button {
     right: 80px;
     bottom: 0;
 }
-#NAV.mobile-nav {
+.mobile-nav {
     display: none;
 }
 #NAV,
@@ -1495,7 +1519,15 @@ body.dashboard-open .anchor-arrow button {
 
 /****** all content list ******/
 
-a.label.label-search-tag {
+a.label.label-search-tag,
+a.label.label-search-tag:hover,
+a.label.label-search-tag:focus,
+.faceted-search-main .fs-result-row a.label.label-search-tag,
+.faceted-search-main .fs-result-row a.label.label-search-tag:hover,
+.faceted-search-main .fs-result-row a.label.label-search-tag:focus,
+.faceted-search-main .fs-result-row a.label.label-search-tag.topic,
+.faceted-search-main .fs-result-row a.label.label-search-tag.topic:hover,
+.faceted-search-main .fs-result-row a.label.label-search-tag.topic:focus {
     font-weight: 600;
     font-size: 10px;
     line-height: 1.4;
@@ -1506,6 +1538,14 @@ a.label.label-search-tag {
     background: #fff;
     border: 1px solid #4367A8;
     border-radius: 60px;
+}
+a.label.label-search-tag:hover,
+a.label.label-search-tag:focus,
+.faceted-search-main .fs-result-row a.label.label-search-tag:hover,
+.faceted-search-main .fs-result-row a.label.label-search-tag:focus,
+.faceted-search-main .fs-result-row a.label.label-search-tag.topic:hover,
+.faceted-search-main .fs-result-row a.label.label-search-tag.topic:focus {
+    text-decoration: underline;
 }
 .HLLandingControl .content-tags {
     margin-left: -10px;
@@ -2412,10 +2452,15 @@ a.label.label-search-tag {
 
 /****** blogs side ******/
 
-.popular-stories .HLLandingControl {
+.popular-stories .HLLandingControl,
+.most-popular-articles {
     margin-bottom: -100px;
 }
-.popular-stories .HLLandingControl ul li {
+.popular-articles-rss ~ .most-popular-articles {
+    margin-top: 115px;
+}
+.popular-stories .HLLandingControl ul li,
+.popular-article {
     border-bottom: none;
     background: #fff;
     padding: 0;
@@ -2424,24 +2469,32 @@ a.label.label-search-tag {
     display: flex;
     color: #575451;
 }
-.popular-stories .HLLandingControl ul li:last-of-type {
+.popular-article {
+    min-height: 210px;
+}
+.popular-stories .HLLandingControl ul li:last-of-type,
+.popular-article:last-child {
     margin-bottom: 0;
 }
-.popular-stories .HLLandingControl ul li .img-container {
+.popular-stories .HLLandingControl ul li .img-container,
+.popular-article .img-container {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: 30%;
 }
-.popular-stories .HLLandingControl ul li .text-container {
+.popular-stories .HLLandingControl ul li .text-container,
+.popular-article .text-container {
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: 100%;
     padding: 25px;
 }
-.popular-stories .HLLandingControl ul li .img-container + .text-container {
-    flex-basis: 100%;
+.popular-stories .HLLandingControl ul li .img-container + .text-container,
+.popular-article .text-container {
+    flex-basis: 70%;
 }
-.popular-stories .HLLandingControl ul li h3 {
+.popular-stories .HLLandingControl ul li h3,
+.popular-article h3 {
     margin-top: 0;
     margin-bottom: 10px;
 }
@@ -2454,6 +2507,9 @@ a.label.label-search-tag {
 }
 .popular-stories .HLLandingControl ul li h5.community-name a {
     text-decoration: none;
+}
+.popular-article .ByLine {
+    margin-bottom: 15px;
 }
 
 /************ ad space ************/
@@ -2556,6 +2612,7 @@ a.label.label-search-tag {
 }
 #CommunityTabsContainer > li > a {
     padding: 12px 20px;
+    float: left;
 }
 .nav-tabs > li > a::after,
 .nav-tabs.ui-tabs-nav > li.ui-state-default > a.ui-tabs-anchor::after {
@@ -2578,6 +2635,10 @@ a.label.label-search-tag {
     color: #5987C6;
     background: #f7f7f7;
     border-color: transparent;
+}
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+    border-color: transparent;
+    background: #f7f7f7;
 }
 .nav-tabs > li.active > a, 
 .nav-tabs > li.active > a:hover, 
@@ -2618,6 +2679,20 @@ a.label.label-search-tag {
 }
 .nav-tabs > li > a > .badge {
     margin-left: 8px;
+}
+.nav .caret,
+.nav .open>a .caret {
+    border-top-color: #4367A8;
+    border-bottom-color: #4367A8;
+}
+.nav-tabs > li > a:hover .caret, 
+.nav-tabs > li > a:focus .caret, 
+.nav-tabs.ui-tabs-nav > li.ui-state-default > a.ui-tabs-anchor:hover .caret, 
+.nav-tabs.ui-tabs-nav > li.ui-state-default > a.ui-tabs-anchor:focus .caret,
+.nav .open>a:hover .caret, 
+.nav .open>a:focus .caret {
+    border-top-color: #5987C6;
+    border-bottom-color: #5987C6;
 }
 
 /****** discussions and events ******/
@@ -3201,7 +3276,27 @@ div[id*="divMessageThread"] > .row:not(:last-child) {
 .bootstrap-switch .bootstrap-switch-handle-off, 
 .bootstrap-switch .bootstrap-switch-label {
     padding: 6px 11px;
-    width: 49px !important;
+}
+.bootstrap-switch {
+    white-space: nowrap;
+}
+
+/****** profile page inbox ******/
+
+div[id*="InboxDetails"] .col-md-1 {
+    width: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+div[id*="InboxDetails"] .col-md-11 {
+    width: calc(100% - 50px);
+}
+.mail-option .chk-all, .mail-option > .btn-group {
+    margin-bottom: 5px;
+}
+.mail-option .chk-all > .btn-group {
+    display: inline;
+    float: right;
 }
 
 /************ responsiveness ************/
@@ -3234,6 +3329,10 @@ div[id*="divMessageThread"] > .row:not(:last-child) {
         font-size: 12px;
         padding: 2px 5px;
         border-radius: 0;
+    }
+    .form-control + .input-group-btn .btn {
+        padding-top: 8px;
+        padding-bottom: 9px;
     }
 }
 
@@ -3275,9 +3374,6 @@ div[id*="divMessageThread"] > .row:not(:last-child) {
     #NAV {
         right: 15px;
     }
-    .navbar-nav {
-        overflow-y: scroll;
-    }
 }
 
 /* fixing indented content on profile on tablet screens */
@@ -3301,7 +3397,7 @@ div[id*="divMessageThread"] > .row:not(:last-child) {
         right: auto;
         float: none;
     }
-    #NAV.mobile-nav {
+    .mobile-nav {
         display: block;
     }
     #NAV:not(.mobile-nav) {
@@ -3316,8 +3412,12 @@ div[id*="divMessageThread"] > .row:not(:last-child) {
     }
 
     /* nav */
-    #NAV .navbar {
+    .navbar-nav {
+        overflow-y: scroll;
+    }
+    .mobile-nav .navbar {
         min-height: 0;
+        margin-bottom: 0;
     }
     .navbar-collapse {
         padding-left: 0;
@@ -3357,7 +3457,7 @@ div[id*="divMessageThread"] > .row:not(:last-child) {
     #MPAuxNav ul.level1 {
         display: none;
     }
-    #NAV ul.level1 {
+    .mobile-nav ul.level1 {
         display: block;
         background: #EDEDEF;
         float: none !important;
@@ -3365,10 +3465,10 @@ div[id*="divMessageThread"] > .row:not(:last-child) {
         padding-left: 0;
         margin-bottom: 0;
     }
-    #NAV ul.level1 li {
+    .mobile-nav ul.level1 li {
         float: none !important;
     }
-    #NAV ul.level1 li a {
+    .mobile-nav ul.level1 li a {
         padding: 15px 40px;
         margin: 0;
         display: block;
@@ -3494,7 +3594,7 @@ div[id*="divMessageThread"] > .row:not(:last-child) {
     #MPheader > .row:first-child {
         align-self: flex-end;
     }
-    .HLWelcome {
+    #Welcome_Content {
         margin-right: -10px;
     }
 }
@@ -3554,6 +3654,15 @@ div[id*="divMessageThread"] > .row:not(:last-child) {
     .popular-stories .col-md-6:first-child {
         padding-right: 15px;
         padding-bottom: 50px;
+    }
+}
+
+@media (max-width: 550px) {
+    .popular-article .img-container {
+        display: none;
+    }
+    .popular-article .text-container {
+        flex-basis: 100%;
     }
 }
 
@@ -3648,8 +3757,8 @@ div[id*="divMessageThread"] > .row:not(:last-child) {
     }
 }
 @media (max-width: 475px) {
-    .col-md-8 .ContentUserControl:not(.slider-content) .HLLandingControl.SearchResults ul li,
-    .col-md-8 .ContentUserControl .HLLandingControl.HLDiscussions ul li {
+    .col-md-8 .ContentUserControl:not(.slider-content) .HLLandingControl.SearchResults ul li.has-img,
+    .col-md-8 .ContentUserControl .HLLandingControl.HLDiscussions ul li.has-img {
         padding-left: 25px;
     }
     .col-md-8 .HLLandingControl.SearchResults ul li .col-md-2.col-sm-2,
@@ -3985,5 +4094,28 @@ div[id*="divMessageThread"] > .row:not(:last-child) {
     }
     .interior-slide .text-container {
         flex-basis: calc(100% - 250px);
+    }
+}
+
+/****** community pages ******/
+@media (min-width: 992px) {
+    div[id*="pnlDigest"] div[id*="MessagePanel"] > .row-border-bottom > .col-md-4 {
+        width: 25%;
+        padding-top: 7px;
+    }
+}
+
+/****** profile pages ******/
+@media (max-width: 768px) {
+    .nav-stacked>li {
+        margin-left: 0 !important;
+    }
+    div[id*="InboxDetails"] > .row > .col-sm-9.col-xs-8,
+    div[id*="InboxDetails"] > .row > .col-sm-3.col-xs-4 {
+        width: 100%;
+    }
+    #composeMessageContainer {
+        margin-bottom: 5px;
+        text-align: left !important;
     }
 }
