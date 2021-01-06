@@ -2453,7 +2453,7 @@ a.label.label-search-tag:focus,
 /****** blogs side ******/
 
 .popular-stories .HLLandingControl,
-.most-popular-articles {
+.home .most-popular-articles {
     margin-bottom: -100px;
 }
 .popular-articles-rss ~ .most-popular-articles {

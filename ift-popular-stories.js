@@ -1,16 +1,26 @@
 $(function () {
-    var url = 'https://api-public.rasa.io/v1/top-articles/b95c857c-e040-4662-a45f-a5b6bfe7a887';
+    var url = 'https://api-public.rasa.io/v1/top-articles/b95c857c-e040-4662-a45f-a5b6bfe7a887',
+        container = $('.most-popular-articles');
 
-    $.ajax({
-        url: url,
-        dataType: 'json',
-        success: success,
-        error: error
-    });
+    if (!!($(container).html())) {
+        $.ajax({
+            url: url,
+            dataType: 'json',
+            success: success,
+            error: error
+        });
+    }
+
 
     function success(resp) {
+
+        if ($(container).hasClass('show-3')) {
+            numToList = 3;
+        } else {
+            numToList = resp.results.length;
+        }
         
-        for (var i = 0; i < 3; i++) {
+        for (var i = 0; i < numToList; i++) {
             var self = resp.results[i];
 
                 title = self.title,
@@ -22,7 +32,7 @@ $(function () {
 
             var elem = '<div class="popular-article"><div class="img-container" style="background-image: url(\'' + img +'\');"></div><div class="text-container"><h3><a href="' + href + '" target="_blank" rel="noopener">' + title + '</a></h3><div class="ByLine">From: ' + source + '</div><div class="desc">' + text + '</div></div></div>';
 
-            $(elem).appendTo('.most-popular-articles');
+            $(elem).appendTo(container);
         }
     }
 
