@@ -29,6 +29,11 @@ $(function () {
     $('.user-details, .progress-section, .dashboard-links, .dashboard-buttons').wrapAll('<div class="member-dashboard" />');
     $('.member-dashboard').wrap('<div class="member-dashboard-wrap" />');
 
+    // hide contributions summary on contributions page
+    if (window.location.href.indexOf('contributions-summary') != -1) {
+        $('.points-summary').remove();
+    }
+
     // create logout link
     var logoutLink = $('#ProfileContainer a[id*="logoutLink"]').clone();
 

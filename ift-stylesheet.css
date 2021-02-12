@@ -1384,14 +1384,14 @@ body.dashboard-open .anchor-arrow button {
 }
 
 /*** points summary ***/
-.points-summary .col-md-8,
-.points-summary .col-md-4 .achievements,
-.points-summary .col-md-4 h3,
-.points-summary .alert.alert-warning,
-.points-summary .points > div:not(:first-child) {
+.member-dashboard .points-summary .col-md-8,
+.member-dashboard .points-summary .col-md-4 .achievements,
+.member-dashboard .points-summary .col-md-4 h3,
+.member-dashboard .points-summary .alert.alert-warning,
+.member-dashboard .points-summary .points > div:not(:first-child) {
     display: none;
 }
-.points-summary .points .data {
+.member-dashboard .points-summary .points .data {
     margin-top: 20px;
     padding: 4px 8px;
     background-color: #FFD106;
@@ -1400,17 +1400,17 @@ body.dashboard-open .anchor-arrow button {
     min-width: 0;
     min-height: 0;
 }
-.points-summary .points .data,
-.points-summary .points .data::after {
+.member-dashboard .points-summary .points .data,
+.member-dashboard .points-summary .points .data::after {
     font-weight: 800;
     color: #262D3C;
     font-size: 14px;
     line-height: 19px;
 }
-.points-summary .points .data > div {
+.member-dashboard .points-summary .points .data > div {
     display: none;
 }
-.points-summary .points .data::after {
+.member-dashboard .points-summary .points .data::after {
     content: 'Pts';
 }
 
