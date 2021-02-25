@@ -236,7 +236,13 @@ function handleLandingControls() {
 }
 
 function handleNetworks() {
-    $('.networks-row .MyNetworksControl .hero-widget').closest('.row').addClass('network-card');
+    var networks = $('.networks-row .MyNetworksControl .hero-widget').toArray();
+
+    $('.networks-row .MyNetworksControl > .col-md-12:first-child').prepend('<div class="networks-list" />');
+
+    for (var i = 0; i < 3; i++) {
+        $('.networks-row .networks-list').append(networks[i]);
+    }
 }
 
 $(function () {

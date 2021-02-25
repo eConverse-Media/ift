@@ -508,7 +508,7 @@ select.form-control {
 }
 .make-link a,
 .hero-announcements .HLLandingControl .HLContainer a,
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn {
+.networks-row .MyNetworksControl .hero-widget .options .btn {
     text-decoration: none;
     position: relative;
 }
@@ -520,7 +520,7 @@ select.form-control {
 .HLLandingControl div[id*="More"] a,
 .HLLandingControl div[id*="BottomLink"] a,
 .HLLandingControl div[id*="LinkToCalendar"] a,
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn {
+.networks-row .MyNetworksControl .hero-widget .options .btn {
     padding: 0;
     border: none;
     position: relative;
@@ -531,8 +531,8 @@ select.form-control {
 .HLLandingControl div[id*="BottomLink"] a:focus,
 .HLLandingControl div[id*="LinkToCalendar"] a:hover,
 .HLLandingControl div[id*="LinkToCalendar"] a:focus,
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn:hover,
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn:focus {
+.networks-row .MyNetworksControl .hero-widget .options .btn:hover,
+.networks-row .MyNetworksControl .hero-widget .options .btn:focus {
     background: transparent;
     color: #5987C6;
     text-decoration: underline;
@@ -542,7 +542,7 @@ select.form-control {
 .HLLandingControl div[id*="BottomLink"] a::after,
 .HLLandingControl div[id*="LinkToCalendar"] a::after,
 .hero-announcements .HLLandingControl .HLContainer a::after,
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn::after {
+.networks-row .MyNetworksControl .hero-widget .options .btn::after {
     font-family: IFT;
     content: '\f00d';
     position: absolute;
@@ -554,8 +554,8 @@ select.form-control {
 .HLLandingControl div[id*="BottomLink"] a:focus::after,
 .HLLandingControl div[id*="LinkToCalendar"] a:hover::after,
 .HLLandingControl div[id*="LinkToCalendar"] a:focus::after,
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn:hover::after,
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn:focus::after {
+.networks-row .MyNetworksControl .hero-widget .options .btn:hover::after,
+.networks-row .MyNetworksControl .hero-widget .options .btn:focus::after {
     text-decoration: none;
 }
 
@@ -1972,31 +1972,22 @@ a.label.label-search-tag:focus,
     margin-bottom: 95px;
 }
 .networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row,
-.networks-row .MyNetworksControl .badge {
+.networks-row .MyNetworksControl .badge,
+.networks-row a[id*="MoreNetworks"],
+.networks-row .MyNetworksControl > .col-md-12 > .Content {
     display: none;
 }
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(3),
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(5),
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(7) {
-    display: block;
-    flex-basis: 33%;
+.networks-row .MyNetworksControl .networks-list .hero-widget {
+    flex-basis: calc(33.33333333% - 30px);
+    margin: 0 15px;
 }
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] {
+.networks-row .MyNetworksControl .networks-list {
     display: flex;
     flex-wrap: wrap;
     margin-left: -15px;
     margin-right: -15px;
 }
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row {
-    margin-left: 0;
-    margin-right: 0;
-}
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .col-md-3 {
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget {
+.networks-row .MyNetworksControl .hero-widget {
     min-height: 140px;
     width: 100%;
     display: flex;
@@ -2008,21 +1999,21 @@ a.label.label-search-tag:focus,
     background: #F7F7F7;
     padding: 20px;
 }
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget h5 {
+.networks-row .MyNetworksControl .hero-widget h5 {
     margin: 0;
 }
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget h5 a {
+.networks-row .MyNetworksControl .hero-widget h5 a {
     text-transform: none;
     color: #262D3C;
     font-weight: 700;
     font-size: 18px;
     line-height: 25px;
 }
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options .btn {
+.networks-row .MyNetworksControl .hero-widget .options .btn {
     background: transparent;
 }
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget h5,
-.networks-row .MyNetworksControl div[id*="UpdatePanel"] .hero-widget .options {
+.networks-row .MyNetworksControl .hero-widget h5,
+.networks-row .MyNetworksControl .hero-widget .options {
     text-align: left;
 }
 
@@ -3802,18 +3793,20 @@ div[id*="InboxDetails"] .col-md-11 {
 }
 
 /*** networks ***/
+@media (max-width: 991px) {
+    .networks-row {
+        margin-bottom: 40px;
+    }
+}
 @media (max-width: 768px) {
-    .networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(3),
-    .networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(5),
-    .networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(7) {
-        flex-basis: 50%;
+    .networks-row .MyNetworksControl .networks-list .hero-widget {
+        flex-basis: calc(50% - 30px);
+        margin: 15px;
     }
 }
 @media (max-width: 550px) {
-    .networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(3),
-    .networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(5),
-    .networks-row .MyNetworksControl div[id*="UpdatePanel"] > .row.network-card:nth-child(7) {
-        flex-basis: 100%;
+    .networks-row .MyNetworksControl .networks-list .hero-widget {
+        flex-basis: calc(100% - 30px);
     }
 }
 
