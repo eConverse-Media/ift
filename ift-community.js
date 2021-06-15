@@ -1,5 +1,5 @@
 function handleCommunityHtml() {
-    handleBgImage($('.summary-edit'), $('.summary-edit'));
+    handleBgImage($('.summary-edit .group-banner-image'), $('.summary-edit'));
 
     $('#PageTitleH1').prependTo('.summary-edit .Content');
     $('.JoinLeaveLink').appendTo('.summary-edit .Content');

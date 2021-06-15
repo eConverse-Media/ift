@@ -2553,7 +2553,7 @@ a.label.label-search-tag:focus,
     padding: 0;
     margin-bottom: 20px !important;
 }
-.summary-edit .Content img {
+.summary-edit .group-banner-image img {
     display: none;
 }
 .summary-edit .JoinLeaveLink {
